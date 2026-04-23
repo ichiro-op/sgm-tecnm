@@ -22,7 +22,8 @@ export default function Login() {
   const [error, setError] = useState('')
 
   const handleGoogleLogin = () => {
-    window.location.href = '/api/auth/google'
+    const base = import.meta.env.VITE_API_URL || ''
+    window.location.href = `${base}/api/auth/google`
   }
 
   const handleDevLogin = async (e) => {

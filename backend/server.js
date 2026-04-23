@@ -7,13 +7,19 @@ const path = require('path')
 
 const app = express()
 const PORT = process.env.PORT || 3001
+app.set('trust proxy', 1)
 
 // ── Sesiones ──────────────────────────────────────────────────────
+const isProd = process.env.NODE_ENV === 'production'
 app.use(session({
   secret: process.env.SESSION_SECRET || 'lab-secret-dev-2024',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },
+  cookie: {
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    sameSite: isProd ? 'none' : 'lax',
+    secure: isProd,
+  },
 }))
 
 // ── Passport ──────────────────────────────────────────────────────
