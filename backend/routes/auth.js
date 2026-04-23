@@ -19,10 +19,12 @@ router.get('/google/callback',
 
 // ── Login dev (sin Google, solo para pruebas locales) ─────────────
 router.post('/dev-login', (req, res) => {
-  if (process.env.NODE_ENV === 'production') {
+  const { email } = req.body
+  const allowedEmails = (process.env.ADMIN_EMAILS || '').split(',').map(e => e.trim()).filter(Boolean)
+  const isAllowed = allowedEmails.includes(email)
+  if (process.env.NODE_ENV === 'production' && !isAllowed) {
     return res.status(403).json({ error: 'No disponible en producción' })
   }
-  const { email } = req.body
   if (!email) return res.status(400).json({ error: 'Email requerido' })
 
   let user = db.prepare('SELECT * FROM usuarios WHERE email = ?').get(email)
