@@ -28,8 +28,20 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 // ── Middleware ────────────────────────────────────────────────────
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173',
+  'http://localhost:3000',
+].filter(Boolean).map(o => o.replace(/\/$/, '')) // quitar trailing slash
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ''))) {
+      callback(null, true)
+    } else {
+      callback(new Error(`CORS: origin ${origin} not allowed`))
+    }
+  },
   credentials: true,
 }))
 app.use(express.json())
