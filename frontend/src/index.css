@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 45%, #0f172a 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+  }
+  body {
+    @apply text-slate-900 antialiased;
+    font-family: 'Fira Sans', 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    background: transparent;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-transparent;
+  }
+}
+
+@layer components {
+  /* ── Buttons ─────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-lg
+           hover:bg-primary-500 active:bg-primary-700
+           transition-colors duration-150 font-medium text-sm
+           disabled:opacity-50 disabled:cursor-not-allowed shadow-sm;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white/80 text-slate-700 border border-white/60
+           px-4 py-2 rounded-lg hover:bg-white hover:border-white/80
+           active:bg-white/90 transition-colors duration-150 font-medium text-sm
+           disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg
+           hover:bg-red-500 active:bg-red-700
+           transition-colors duration-150 font-medium text-sm shadow-sm;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-slate-600 px-3 py-2 rounded-lg
+           hover:bg-slate-100 transition-colors duration-150 text-sm font-medium;
+  }
+
+  /* ── Glass Cards ─────────────────────────────────── */
+  .card {
+    @apply bg-white/90 backdrop-blur-md rounded-xl border border-white/50 shadow-xl p-6
+           transition-[transform,box-shadow] duration-300 ease-out;
+  }
+  .card-sm {
+    @apply bg-white/90 backdrop-blur-md rounded-xl border border-white/50 shadow-xl p-4
+           transition-[transform,box-shadow] duration-300 ease-out;
+  }
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg p-6;
+  }
+
+  /* ── Page headers ────────────────────────────────── */
+  .page-title {
+    @apply text-white font-bold text-xl tracking-tight;
+  }
+  .page-subtitle {
+    @apply text-blue-200 text-sm mt-0.5;
+  }
+
+  /* ── Form elements ───────────────────────────────── */
+  .input {
+    @apply border border-slate-300 rounded-lg px-3 py-2 w-full text-sm
+           bg-white text-slate-900 placeholder-slate-400
+           focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent
+           transition-shadow duration-150;
+  }
+  .label {
+    @apply block text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5;
+  }
+
+  /* ── Status badges ───────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center text-xs font-semibold px-2.5 py-0.5 rounded-full;
+  }
+  .badge-pendiente     { @apply badge bg-amber-100  text-amber-800; }
+  .badge-en-proceso    { @apply badge bg-blue-100   text-blue-800; }
+  .badge-resuelto      { @apply badge bg-green-100  text-green-800; }
+  .badge-funcional     { @apply badge bg-emerald-100 text-emerald-800; }
+  .badge-mantenimiento { @apply badge bg-amber-100  text-amber-800; }
+  .badge-fuera         { @apply badge bg-red-100    text-red-800; }
+
+  /* ── Stat card ───────────────────────────────────── */
+  .stat-card  { @apply card-sm flex items-center gap-4; }
+  .stat-icon  { @apply w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0; }
+
+  /* ── Table ───────────────────────────────────────── */
+  .table-header-cell {
+    @apply px-4 py-3 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider
+           bg-primary-50/80 border-b border-primary-100;
+  }
+  .table-cell { @apply px-4 py-3 text-sm text-slate-700; }
+}
+
+/* ══════════════════════════════════════════════════════
+   VISUAL MODE — enhanced effects (only when .visual-mode)
+══════════════════════════════════════════════════════ */
+
+/* ── Semi-transparent cards — subtle blur frosts the particles just slightly ── */
+.visual-mode .card,
+.visual-mode .card-sm {
+  background: rgba(14, 32, 80, 0.46) !important;
+  backdrop-filter: blur(3px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(3px) saturate(130%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+}
+
+/* ── White text inside cards ── */
+.visual-mode .card .text-slate-800,
+.visual-mode .card-sm .text-slate-800   { color: #ffffff !important; }
+.visual-mode .card .text-slate-700,
+.visual-mode .card-sm .text-slate-700   { color: rgba(255,255,255,0.88) !important; }
+.visual-mode .card .text-slate-600,
+.visual-mode .card-sm .text-slate-600   { color: rgba(255,255,255,0.74) !important; }
+.visual-mode .card .text-slate-500,
+.visual-mode .card-sm .text-slate-500   { color: rgba(255,255,255,0.60) !important; }
+.visual-mode .card .text-slate-400,
+.visual-mode .card-sm .text-slate-400   { color: rgba(255,255,255,0.48) !important; }
+
+/* primary color labels (section sub-headers) */
+.visual-mode .card .text-primary-700,
+.visual-mode .card-sm .text-primary-700 { color: rgba(147,197,253,0.95) !important; }
+
+/* progress bar track */
+.visual-mode .card .bg-slate-100        { background: rgba(255,255,255,0.14) !important; }
+
+/* ── Stat-icon: remove white box, white icons ── */
+.visual-mode .stat-icon {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.visual-mode .stat-icon * { color: rgba(255,255,255,0.82) !important; }
+
+/* ── Badges adapted for dark glass ── */
+.visual-mode .badge-pendiente     { background: rgba(251,191,36,0.20)  !important; color: #fde68a !important; }
+.visual-mode .badge-en-proceso    { background: rgba(59,130,246,0.20)  !important; color: #bfdbfe !important; }
+.visual-mode .badge-resuelto      { background: rgba(16,185,129,0.20)  !important; color: #a7f3d0 !important; }
+.visual-mode .badge-funcional     { background: rgba(16,185,129,0.20)  !important; color: #a7f3d0 !important; }
+.visual-mode .badge-mantenimiento { background: rgba(251,191,36,0.20)  !important; color: #fde68a !important; }
+.visual-mode .badge-fuera         { background: rgba(239,68,68,0.20)   !important; color: #fca5a5 !important; }
+
+/* ── Secondary button in visual mode ── */
+.visual-mode .btn-secondary {
+  background: rgba(255,255,255,0.10) !important;
+  color: rgba(255,255,255,0.90) !important;
+  border-color: rgba(255,255,255,0.18) !important;
+}
+.visual-mode .btn-secondary:hover {
+  background: rgba(255,255,255,0.18) !important;
+}
+
+/* ── Card hover zoom + glow illumination — desktop only ── */
+@media (min-width: 768px) {
+  .visual-mode .stat-card:hover {
+    transform: scale(1.04) translateY(-2px) !important;
+    background: rgba(14, 32, 80, 0.60) !important;
+    backdrop-filter: blur(4px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(4px) saturate(140%) !important;
+    box-shadow:
+      0 20px 48px rgba(0, 0, 0, 0.35),
+      0 0 55px rgba(96, 165, 250, 0.28),
+      0 0 100px rgba(96, 165, 250, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+    border-color: rgba(147, 197, 253, 0.35) !important;
+  }
+  .visual-mode .card:hover {
+    transform: scale(1.015) translateY(-1px) !important;
+    background: rgba(14, 32, 80, 0.56) !important;
+    backdrop-filter: blur(4px) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(4px) saturate(140%) !important;
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.30),
+      0 0 40px rgba(96, 165, 250, 0.20),
+      inset 0 1px 0 rgba(255, 255, 255, 0.20) !important;
+    border-color: rgba(147, 197, 253, 0.28) !important;
+  }
+}
+
+/* ── Sidebar glass ── */
+.visual-mode aside {
+  background: rgba(15, 23, 42, 0.70) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Glow on active nav link */
+.visual-mode a.bg-primary-600 {
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.50);
+}
+
+/* ── Tables inside cards ────────────────────────────── */
+.visual-mode .card table thead,
+.visual-mode .card-sm table thead {
+  background: rgba(30, 58, 138, 0.45) !important;
+  border-color: rgba(147, 197, 253, 0.20) !important;
+}
+.visual-mode .card table thead th,
+.visual-mode .card-sm table thead th {
+  color: rgba(147, 197, 253, 0.90) !important;
+  background: transparent !important;
+}
+.visual-mode .card table tbody tr,
+.visual-mode .card-sm table tbody tr {
+  background: transparent !important;
+}
+.visual-mode .card table tbody tr:hover,
+.visual-mode .card-sm table tbody tr:hover {
+  background: rgba(96, 165, 250, 0.09) !important;
+}
+.visual-mode .card table td,
+.visual-mode .card-sm table td {
+  color: rgba(255, 255, 255, 0.80) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+/* Gray dividers / borders inside cards */
+.visual-mode .card [class*="border-gray-"],
+.visual-mode .card-sm [class*="border-gray-"] {
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+/* Gray bg elements inside cards (auto-field boxes, footer bars) */
+.visual-mode .card .bg-gray-50,
+.visual-mode .card-sm .bg-gray-50 {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+.visual-mode .card .bg-gray-50 .text-gray-400,
+.visual-mode .card-sm .bg-gray-50 .text-gray-400 { color: rgba(255,255,255,0.45) !important; }
+.visual-mode .card .bg-gray-50 .text-gray-700,
+.visual-mode .card-sm .bg-gray-50 .text-gray-700 { color: rgba(255,255,255,0.80) !important; }
+
+/* gray-* text variants inside cards (same mapping as slate-*) */
+.visual-mode .card .text-gray-900,
+.visual-mode .card-sm .text-gray-900 { color: #ffffff !important; }
+.visual-mode .card .text-gray-800,
+.visual-mode .card-sm .text-gray-800 { color: rgba(255,255,255,0.95) !important; }
+.visual-mode .card .text-gray-700,
+.visual-mode .card-sm .text-gray-700 { color: rgba(255,255,255,0.85) !important; }
+.visual-mode .card .text-gray-600,
+.visual-mode .card-sm .text-gray-600 { color: rgba(255,255,255,0.72) !important; }
+.visual-mode .card .text-gray-500,
+.visual-mode .card-sm .text-gray-500 { color: rgba(255,255,255,0.58) !important; }
+.visual-mode .card .text-gray-400,
+.visual-mode .card-sm .text-gray-400 { color: rgba(255,255,255,0.45) !important; }
+.visual-mode .card .text-gray-300,
+.visual-mode .card-sm .text-gray-300 { color: rgba(255,255,255,0.35) !important; }
+
+/* White-bg buttons inside cards (type-falla pills, etc.) */
+.visual-mode .card button.bg-white,
+.visual-mode .card-sm button.bg-white {
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: rgba(255, 255, 255, 0.80) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+.visual-mode .card button.bg-white:hover,
+.visual-mode .card-sm button.bg-white:hover {
+  background: rgba(96, 165, 250, 0.20) !important;
+  border-color: rgba(96, 165, 250, 0.45) !important;
+  color: #fff !important;
+}
+
+/* ── Info banners (outside cards) ───────────────────── */
+.visual-mode .bg-primary-50 {
+  background: rgba(37, 99, 235, 0.20) !important;
+  border-color: rgba(96, 165, 250, 0.30) !important;
+  /* covers text-primary-* set directly on the banner element */
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+/* descendant overrides */
+.visual-mode .bg-primary-50 .text-primary-900 { color: rgba(255, 255, 255, 0.95) !important; }
+.visual-mode .bg-primary-50 .text-primary-800 { color: rgba(255, 255, 255, 0.90) !important; }
+.visual-mode .bg-primary-50 .text-primary-700 { color: rgba(147, 197, 253, 0.95) !important; }
+.visual-mode .bg-primary-50 .text-primary-600 { color: rgba(147, 197, 253, 0.85) !important; }
+.visual-mode .bg-primary-50 .text-primary-500 { color: rgba(147, 197, 253, 0.70) !important; }
+.visual-mode .bg-primary-50 .text-gray-500    { color: rgba(255, 255, 255, 0.55) !important; }
+.visual-mode .bg-primary-50 .font-bold        { color: rgba(147, 197, 253, 0.95) !important; }
+
+.visual-mode .bg-green-50 {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border-color: rgba(52, 211, 153, 0.28) !important;
+  color: #86efac !important;
+}
+.visual-mode .bg-green-50 .text-green-700 { color: #86efac !important; }
+
+.visual-mode .bg-red-50 {
+  background: rgba(239, 68, 68, 0.16) !important;
+  border-color: rgba(252, 165, 165, 0.28) !important;
+  color: #fca5a5 !important;
+}
+.visual-mode .bg-red-50 .text-red-700 { color: #fca5a5 !important; }
+
+/* ── Formato modal body (blue-glass theme) ───────────── */
+/* Base color: any element without an explicit text-* class inherits white */
+.modal-body-dark                     { color: rgba(255,255,255,0.90)  !important; }
+/* Labels and text → white / light-blue palette */
+.modal-body-dark .label              { color: rgba(147,197,253,0.90)  !important; }
+.modal-body-dark .text-slate-700     { color: rgba(255,255,255,0.92)  !important; }
+.modal-body-dark .text-slate-600     { color: rgba(255,255,255,0.80)  !important; }
+.modal-body-dark .text-slate-500     { color: rgba(147,197,253,0.80)  !important; }
+.modal-body-dark .text-slate-400     { color: rgba(147,197,253,0.65)  !important; }
+.modal-body-dark .text-primary-700   { color: rgba(147,197,253,1)     !important; }
+.modal-body-dark .text-blue-600      { color: #93c5fd                 !important; }
+.modal-body-dark .text-green-600     { color: #6ee7b7                 !important; }
+.modal-body-dark .text-amber-600     { color: #fcd34d                 !important; }
+.modal-body-dark .text-red-400,
+.modal-body-dark .text-red-500       { color: #fca5a5                 !important; }
+/* table borders → blue-tinted */
+.modal-body-dark table               { border-color: rgba(96,165,250,0.25) !important; }
+.modal-body-dark table th,
+.modal-body-dark table td            { border-color: rgba(96,165,250,0.18) !important; }
+.modal-body-dark .border-slate-200,
+.modal-body-dark .border-slate-100   { border-color: rgba(96,165,250,0.18) !important; }
+.modal-body-dark [class*="divide-slate"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(96,165,250,0.15) !important;
+}
+/* row tints → all blue-family */
+.modal-body-dark .bg-primary-50          { background: rgba(37,99,235,0.28)   !important; }
+.modal-body-dark [class*="bg-blue-50"]   { background: rgba(37,99,235,0.22)   !important; }
+.modal-body-dark [class*="bg-green-50"]  { background: rgba(37,99,235,0.14)   !important; }
+.modal-body-dark [class*="bg-amber-50"]  { background: rgba(59,130,246,0.12)  !important; }
+/* legend dots inside formato-03 key */
+.modal-body-dark .bg-blue-100    { background: rgba(37,99,235,0.35)  !important; border-color: rgba(96,165,250,0.45)  !important; }
+.modal-body-dark .bg-green-100   { background: rgba(37,99,235,0.22)  !important; border-color: rgba(96,165,250,0.35)  !important; }
+.modal-body-dark .bg-amber-100   { background: rgba(59,130,246,0.20) !important; border-color: rgba(96,165,250,0.35)  !important; }
+
+/* ── No-zoom override (e.g. Equipos page cards) ──────── */
+.visual-mode .card.no-zoom:hover,
+.visual-mode .card-sm.no-zoom:hover,
+.visual-mode .stat-card.no-zoom:hover {
+  transform: none !important;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+
+/* ── Print styles ────────────────────────────────────── */
+@media print {
+  html, body { background: white !important; }
+  .no-print  { display: none !important; }
+  .print-only { display: block !important; }
+}
