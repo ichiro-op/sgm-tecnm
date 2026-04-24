@@ -35,6 +35,7 @@ export const usuarios = {
 
 export const formatos = {
   getDatos: (numero) => api.get(`/formatos/datos/${numero}`),
+  getEquipos: () => api.get('/formatos/equipos'),
 }
 
 export default api
