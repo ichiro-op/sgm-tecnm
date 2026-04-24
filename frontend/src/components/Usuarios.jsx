@@ -104,10 +104,11 @@ export default function Usuarios() {
                     <select
                       value={u.rol}
                       onChange={e => cambiarRol(u.id, e.target.value)}
-                      className="text-xs border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary-500 bg-white text-gray-800"
+                      style={{ background: '#fff', color: '#1e293b' }}
+                      className="text-xs border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-primary-500"
                     >
-                      <option value="usuario">Usuario</option>
-                      <option value="admin">Admin</option>
+                      <option value="usuario" style={{ background: '#fff', color: '#1e293b' }}>Usuario</option>
+                      <option value="admin" style={{ background: '#fff', color: '#1e293b' }}>Admin</option>
                     </select>
                   </td>
                 </tr>

@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 import { formatos as formatosApi } from '../utils/api'
+import logoSgm from '../assets/logo-sgm.png'
 
 // ── Carga logo como base64 para jsPDF ──────────────────────────────
 async function loadLogoBase64() {
   try {
-    const res = await fetch('/logo-sgm.png')
+    // Vite resuelve el import como data URL o URL procesada
+    if (logoSgm.startsWith('data:')) return logoSgm
+
+    const res = await fetch(logoSgm)
     const blob = await res.blob()
     return new Promise((resolve) => {
       const reader = new FileReader()
