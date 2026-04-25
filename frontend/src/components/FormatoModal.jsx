@@ -1,5 +1,6 @@
 import { useState, useRef, useImperativeHandle, forwardRef } from 'react'
 import { useAuth } from '../context/AuthContext'
+import _logoUrl from '../assets/logo-sgm.png'
 
 /* ── Utilidades ─────────────────────────────────────────────── */
 const today = () => new Date().toISOString().split('T')[0]
@@ -50,23 +51,41 @@ const BASE_CSS = `
 const LANDSCAPE_CSS = BASE_CSS + `@page { size: A4 landscape; }`
 
 /* ── Logo SGC / TecNM ───────────────────────────────────────── */
-const SGC_SVG = `<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
-  <rect x="1" y="1" width="68" height="68" fill="white" stroke="#222" stroke-width="2"/>
-  <text x="35" y="13" font-family="Arial" font-size="10" font-weight="bold" fill="#000" text-anchor="middle" letter-spacing="3">S G C</text>
-  <circle cx="35" cy="38" r="18" fill="none" stroke="#333" stroke-width="1.5"/>
-  <text x="35" y="26.5" font-family="Arial" font-size="5.5" fill="#333" text-anchor="middle">CERTIFICADO</text>
-  <polyline points="25,38 31,46 46,29" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="35" y="53" font-family="Arial" font-size="5.5" fill="#333" text-anchor="middle">ISO 9001</text>
-  <text x="35" y="65" font-family="Arial" font-size="8" font-weight="bold" fill="#000" text-anchor="middle">TecNM</text>
-</svg>`
+// Se convierte a base64 para que funcione en ventana about:blank
+let _logoBase64 = null
+async function getLogoBase64() {
+  if (_logoBase64) return _logoBase64
+  try {
+    const absUrl = new URL(_logoUrl, window.location.href).href
+    const res = await fetch(absUrl)
+    const blob = await res.blob()
+    _logoBase64 = await new Promise(resolve => {
+      const reader = new FileReader()
+      reader.onload = e => resolve(e.target.result)
+      reader.readAsDataURL(blob)
+    })
+  } catch { _logoBase64 = null }
+  return _logoBase64
+}
 
 /* ── Encabezado institucional ───────────────────────────────── */
-function instHeader({ titulo, codigo, normas, pagLabel = 'Página 1 de 2', rev = 'Revisión 0', tituloCenter = false }) {
+function instHeader({ titulo, codigo, normas, pagLabel = 'Página 1 de 2', rev = 'Revisión 0', tituloCenter = false }, logo) {
+  const logoCell = logo
+    ? `<img src="${logo}" style="width:68px;height:68px;object-fit:contain;display:block;margin:auto" alt="SGC TecNM">`
+    : `<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="68" height="68" fill="white" stroke="#222" stroke-width="2"/>
+        <text x="35" y="13" font-family="Arial" font-size="10" font-weight="bold" fill="#000" text-anchor="middle" letter-spacing="3">S G C</text>
+        <circle cx="35" cy="38" r="18" fill="none" stroke="#333" stroke-width="1.5"/>
+        <text x="35" y="26.5" font-family="Arial" font-size="5.5" fill="#333" text-anchor="middle">CERTIFICADO</text>
+        <polyline points="25,38 31,46 46,29" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="35" y="53" font-family="Arial" font-size="5.5" fill="#333" text-anchor="middle">ISO 9001</text>
+        <text x="35" y="65" font-family="Arial" font-size="8" font-weight="bold" fill="#000" text-anchor="middle">TecNM</text>
+       </svg>`
   return `
   <table style="width:100%;border-collapse:collapse;border:1.5px solid #000;margin-bottom:0">
     <tr>
       <td rowspan="3" style="width:76px;border-right:1.5px solid #000;vertical-align:middle;text-align:center;padding:4px">
-        ${SGC_SVG}
+        ${logoCell}
       </td>
       <td style="padding:5px 10px;font-weight:700;font-size:11pt;border-bottom:1px solid #000;${tituloCenter ? 'text-align:center;' : ''}">
         ${titulo}
@@ -124,47 +143,30 @@ const Formato01 = forwardRef(function F01({ equipo }, ref) {
   const delFila = (i) => setData(p => ({ ...p, filas: p.filas.filter((_, j) => j !== i) }))
 
   useImperativeHandle(ref, () => ({
-    print: () => {
+    print: async () => {
+      const logo = await getLogoBase64()
       const rows = [...data.filas]
       while (rows.length < 15) rows.push({ espacio: '', hallazgo: '', atendido: '' })
-
       const filasHTML = rows.map(f => `<tr>
         <td style="width:27%;font-size:10pt">${f.espacio || '&nbsp;'}</td>
         <td style="width:55%;font-size:10pt">${f.hallazgo || '&nbsp;'}</td>
         <td style="width:9%;text-align:center;font-size:10pt">${f.atendido === 'si' ? 'X' : '&nbsp;'}</td>
         <td style="width:9%;text-align:center;font-size:10pt">${f.atendido === 'no' ? 'X' : '&nbsp;'}</td>
       </tr>`).join('')
-
       const html = `
-        ${instHeader({
-          titulo: 'Formato para la Lista de Verificación de Infraestructura y equipo',
-          codigo: 'TecNM-AD-PO-001-01',
-          normas: [
-            'Referencia a la Norma ISO 9001:2015 6.1, 7.1, 7.2, 7.4, 7.5.1, 8.1',
-            'Referencia a la Norma ISO 14001:2015 4.1, 6.1, 8.1, 8.2',
-          ],
-        })}
+        ${instHeader({ titulo: 'Formato para la Lista de Verificación de Infraestructura y equipo', codigo: 'TecNM-AD-PO-001-01', normas: ['Referencia a la Norma ISO 9001:2015 6.1, 7.1, 7.2, 7.4, 7.5.1, 8.1','Referencia a la Norma ISO 14001:2015 4.1, 6.1, 8.1, 8.2'] }, logo)}
         <table class="ft-sep" style="border-top:1.5px solid #000;margin-bottom:0">
-          <tr>
-            <td style="width:55%;font-size:11pt">Jefe(a) del departamento de</td>
-            <td style="text-align:center;font-size:10pt">${data.jefeDpto || '&nbsp;'}</td>
-          </tr>
-          <tr>
-            <td style="font-size:11pt">Jefe(a) del área verificada</td>
-            <td style="text-align:center;font-size:10pt">${data.jefeArea || '&nbsp;'}</td>
-          </tr>
+          <tr><td style="width:55%;font-size:11pt">Jefe(a) del departamento de</td><td style="text-align:center;font-size:10pt">${data.jefeDpto || '&nbsp;'}</td></tr>
+          <tr><td style="font-size:11pt">Jefe(a) del área verificada</td><td style="text-align:center;font-size:10pt">${data.jefeArea || '&nbsp;'}</td></tr>
         </table>
         <table class="ft" style="border-top:1.5px solid #000">
-          <tr>
-            <td colspan="4" style="font-size:10pt"><b>FECHA: &nbsp;&nbsp;${fmtDate(data.fecha)}</b></td>
-          </tr>
+          <tr><td colspan="4" style="font-size:10pt"><b>FECHA: &nbsp;&nbsp;${fmtDate(data.fecha)}</b></td></tr>
           <tr style="background:#e8e8e8">
             <th style="width:27%;text-transform:uppercase;font-size:10pt">Espacio Revisado</th>
             <th style="width:55%;text-transform:uppercase;font-size:10pt">Hallazgo</th>
             <th colspan="2" style="text-align:center;font-size:9pt;text-transform:uppercase">ATENDIDO</th>
           </tr>
-          <tr style="background:#f0f0f0">
-            <th></th><th></th>
+          <tr style="background:#f0f0f0"><th></th><th></th>
             <th style="width:9%;text-align:center;font-size:10pt"><b>Sí</b></th>
             <th style="width:9%;text-align:center;font-size:10pt"><b>No</b></th>
           </tr>
@@ -172,14 +174,8 @@ const Formato01 = forwardRef(function F01({ equipo }, ref) {
         </table>
         <p style="font-size:11pt;font-weight:bold;margin:8px 0 4px 6px;text-transform:uppercase">Realizó:</p>
         <table class="ft-sep" style="border-top:1.5px solid #000">
-          <tr style="height:32px">
-            <td style="width:55%;font-size:11pt">Depto. de Recursos Materiales y Servicios y/o Mantenimiento de Equipo</td>
-            <td style="text-align:center;font-size:11pt">${data.jefeDpto || '&nbsp;'}</td>
-          </tr>
-          <tr style="height:32px">
-            <td style="font-size:11pt">Jefe(a) del Área Verificada</td>
-            <td style="text-align:center;font-size:11pt">${data.jefeArea || '&nbsp;'}</td>
-          </tr>
+          <tr style="height:32px"><td style="width:55%;font-size:11pt">Depto. de Recursos Materiales y Servicios y/o Mantenimiento de Equipo</td><td style="text-align:center;font-size:11pt">${data.jefeDpto || '&nbsp;'}</td></tr>
+          <tr style="height:32px"><td style="font-size:11pt">Jefe(a) del Área Verificada</td><td style="text-align:center;font-size:11pt">${data.jefeArea || '&nbsp;'}</td></tr>
         </table>`
       openPrintWin(html, 'Lista de Verificación — TecNM-AD-PO-001-01')
     }
@@ -286,7 +282,8 @@ const Formato02 = forwardRef(function F02({ equipo, user }, ref) {
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
 
   useImperativeHandle(ref, () => ({
-    print: () => {
+    print: async () => {
+      const logo = await getLogoBase64()
       const chkTable = DEPTOS_02.map(d => `<tr>
         <td style="padding:2px 6px;border:none;font-size:10pt">${d}</td>
         <td style="padding:2px 6px;border:none;text-align:center;width:36px">
@@ -305,7 +302,7 @@ const Formato02 = forwardRef(function F02({ equipo, user }, ref) {
             'Referencia a la Norma ISO 14001:2015 6.1',
           ],
           rev: 'Revisión: 0',
-        })}
+        }, logo)}
         <table class="ft" style="border-top:1.5px solid #000">
           <tr>
             <td style="padding:5px 8px">
@@ -443,7 +440,8 @@ const Formato03 = forwardRef(function F03({ equipo, user }, ref) {
   })
 
   useImperativeHandle(ref, () => ({
-    print: () => {
+    print: async () => {
+      const logo = await getLogoBase64()
       const mesHeaders = MESES.map(m => `<th style="width:26px;text-align:center;font-size:8pt;background:#d9d9d9;text-transform:uppercase;padding:2px">${m}</th>`).join('')
 
       const svcRows = data.servicios.map((svc, i) => {
@@ -481,7 +479,7 @@ const Formato03 = forwardRef(function F03({ equipo, user }, ref) {
             'Referencia a la Norma ISO 14001:2015 4.1, 6.1, 8.1, 8.2',
           ],
           rev: 'Revisión: 0',
-        })}
+        }, logo)}
         <p style="font-size:11pt;font-weight:bold;margin:6px 0">
           Semestre: &nbsp;${data.semestre}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Año: &nbsp;${data.anio}
@@ -677,7 +675,8 @@ const Formato04 = forwardRef(function F04({ equipo, user }, ref) {
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
 
   useImperativeHandle(ref, () => ({
-    print: () => {
+    print: async () => {
+      const logo = await getLogoBase64()
       const html = `
         ${instHeader({
           titulo: 'Formato para Orden de Trabajo de Mantenimiento',
@@ -687,7 +686,7 @@ const Formato04 = forwardRef(function F04({ equipo, user }, ref) {
             'Referencia a la Norma ISO 14001:2015 4.1, 6.1, 8.1, 8.2',
           ],
           rev: 'Revisión: 0',
-        })}
+        }, logo)}
         <p style="font-size:11pt;font-weight:bold;text-align:right;margin:6px 0">
           Número de control: &nbsp;${data.noControl || '_______________'}
         </p>
@@ -853,7 +852,8 @@ const Formato05 = forwardRef(function F05({ equipo, user }, ref) {
   const fmt = (n) => n.toLocaleString('es-MX',{style:'currency',currency:'MXN'})
 
   useImperativeHandle(ref, () => ({
-    print: () => {
+    print: async () => {
+      const logo = await getLogoBase64()
       const itemRows = data.items.map((it, i) => `<tr>
         <td style="text-align:center;font-size:9pt;padding:3px">${i+1}</td>
         <td style="text-align:center;font-size:9pt;padding:3px">${it.cant}</td>
@@ -876,7 +876,7 @@ const Formato05 = forwardRef(function F05({ equipo, user }, ref) {
           ],
           pagLabel: 'Hoja: 1 de 2',
           tituloCenter: true,
-        })}
+        }, logo)}
         <p style="text-align:center;font-size:13pt;font-weight:bold;text-transform:uppercase;margin:8px 0 2px">
           INSTITUTO TECNOLÓGICO DE ${data.instituto.toUpperCase()}
         </p>
