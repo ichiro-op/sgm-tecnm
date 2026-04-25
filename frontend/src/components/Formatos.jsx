@@ -3,6 +3,37 @@ import { formatos as formatosApi } from '../utils/api'
 import { useAuth } from '../context/AuthContext'
 import _logoUrl from '../assets/logo-sgm.png'
 
+/* ── Inyección de CSS para animación de partículas ─────────────── */
+if (typeof document !== 'undefined' && !document.getElementById('fmt-anim-css')) {
+  const _s = document.createElement('style')
+  _s.id = 'fmt-anim-css'
+  _s.textContent = `
+    @keyframes fmt-pt-fly {
+      0%   { transform:translate(-50%,-50%) rotate(var(--pt-a)) translateX(0px)     scale(1);   opacity:.85; }
+      60%  { opacity:.6; }
+      100% { transform:translate(-50%,-50%) rotate(var(--pt-a)) translateX(var(--pt-d)) scale(.15); opacity:0; }
+    }
+    @keyframes fmt-btn-glow {
+      0%,100% { box-shadow:0 0 0 0 rgba(99,102,241,.22), 0 4px 14px rgba(99,102,241,.28); }
+      50%     { box-shadow:0 0 0 8px rgba(99,102,241,0),  0 4px 26px rgba(99,102,241,.68); }
+    }
+    @keyframes fmt-btn-enter {
+      from { opacity:.55; transform:scale(.98); }
+      to   { opacity:1;   transform:scale(1); }
+    }
+    .fmt-btn-ready {
+      animation: fmt-btn-glow 1.9s ease-in-out infinite,
+                 fmt-btn-enter .35s ease-out both;
+    }
+    .fmt-particle {
+      position:absolute; border-radius:50%;
+      top:50%; left:50%; pointer-events:none; z-index:20;
+      animation: fmt-pt-fly 1.05s ease-out forwards;
+    }
+  `
+  document.head.appendChild(_s)
+}
+
 /* ── Utilidades de impresión (igual que FormatoModal) ─────────── */
 const today = () => new Date().toISOString().split('T')[0]
 const fmtDate = (d) => d
@@ -83,6 +114,72 @@ function openPrintWin(html, titulo, landscape = false) {
   setTimeout(() => pw.print(), 350)
 }
 
+/* ── Botón de impresión con partículas ────────────────────────── */
+const PARTICLE_COLORS = ['#818cf8', '#6366f1', '#a5b4fc', '#c7d2fe', '#4f46e5', '#e0e7ff', '#7c3aed', '#a78bfa']
+
+function PrintButton({ isReady, onClick }) {
+  const [particles, setParticles] = useState([])
+  const ivRef = useRef(null)
+
+  useEffect(() => {
+    if (!isReady) {
+      clearInterval(ivRef.current)
+      setParticles([])
+      return
+    }
+    ivRef.current = setInterval(() => {
+      const id = Math.random()
+      const pt = {
+        id,
+        angle: Math.random() * 360,
+        dist: 46 + Math.random() * 34,
+        color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
+        size: 3 + Math.random() * 3.5,
+      }
+      setParticles(p => [...p.slice(-20), pt])
+      setTimeout(() => setParticles(p => p.filter(x => x.id !== id)), 1050)
+    }, 100)
+    return () => clearInterval(ivRef.current)
+  }, [isReady])
+
+  return (
+    <div className="relative w-full" style={{ isolation: 'isolate' }}>
+      {particles.map(pt => (
+        <span
+          key={pt.id}
+          className="fmt-particle"
+          style={{
+            '--pt-a': `${pt.angle}deg`,
+            '--pt-d': `${pt.dist}px`,
+            width: pt.size,
+            height: pt.size,
+            background: pt.color,
+          }}
+        />
+      ))}
+      <button
+        onClick={isReady ? onClick : undefined}
+        disabled={!isReady}
+        title={isReady ? 'Generar PDF' : 'Completa los campos obligatorios (*)'}
+        className={[
+          'btn-primary w-full py-3 justify-center relative select-none',
+          'transition-all duration-500',
+          isReady
+            ? 'fmt-btn-ready'
+            : 'opacity-50 cursor-not-allowed saturate-50',
+        ].join(' ')}
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+          <polyline points="6 9 6 2 18 2 18 9"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <rect x="6" y="14" width="12" height="8"/>
+        </svg>
+        {isReady ? 'Imprimir / Guardar PDF' : 'Completa los campos obligatorios'}
+      </button>
+    </div>
+  )
+}
+
 /* ── Componentes UI reutilizables ─────────────────────────────── */
 function Tip({ txt }) {
   return (
@@ -126,7 +223,7 @@ function EquipoSelect({ equipos, value, onChange, required, className = 'input',
 /* ════════════════════════════════════════════════════════════════
    FORMATO 01 — Lista de Verificación de Infraestructura y Equipo
 ════════════════════════════════════════════════════════════════ */
-const Formato01 = forwardRef(function F01({ equipos }, ref) {
+const Formato01 = forwardRef(function F01({ equipos, onReadyChange }, ref) {
   const [data, setData] = useState({
     lab: '',
     jefeDpto: '',
@@ -136,7 +233,10 @@ const Formato01 = forwardRef(function F01({ equipos }, ref) {
   })
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
 
-  // Al cambiar laboratorio, auto-poblar filas con equipos de ese lab
+  useEffect(() => {
+    onReadyChange?.(!!(data.lab && data.jefeArea.trim() && data.jefeDpto.trim() && data.fecha))
+  }, [data, onReadyChange])
+
   const handleLab = (lab) => {
     const equiposLab = equipos.filter(e => e.laboratorio === lab)
     setData(p => ({
@@ -219,7 +319,6 @@ const Formato01 = forwardRef(function F01({ equipos }, ref) {
         </div>
       </div>
 
-      {/* Tabla de espacios/equipos */}
       <div>
         <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
           Espacios / Equipos a verificar
@@ -264,7 +363,7 @@ const Formato01 = forwardRef(function F01({ equipos }, ref) {
 ════════════════════════════════════════════════════════════════ */
 const DEPTOS_02 = ['Recursos Materiales y Servicios', 'Mantenimiento de Equipo', 'Centro de Cómputo']
 
-const Formato02 = forwardRef(function F02({ equipos, user }, ref) {
+const Formato02 = forwardRef(function F02({ equipos, user, onReadyChange }, ref) {
   const [data, setData] = useState({
     equipoId: '',
     dirigidoA: 'Mantenimiento de Equipo',
@@ -275,6 +374,16 @@ const Formato02 = forwardRef(function F02({ equipos, user }, ref) {
     descripcion: '',
   })
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
+
+  useEffect(() => {
+    onReadyChange?.(!!(
+      data.dirigidoA &&
+      data.areasolicitante.trim() &&
+      data.solicitante.trim() &&
+      data.fecha &&
+      data.descripcion.trim()
+    ))
+  }, [data, onReadyChange])
 
   const handleEquipo = (id) => {
     const eq = equipos.find(e => e.id === id)
@@ -382,7 +491,7 @@ const Formato02 = forwardRef(function F02({ equipos, user }, ref) {
 ════════════════════════════════════════════════════════════════ */
 const MESES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic']
 
-const Formato03 = forwardRef(function F03({ equipos, user }, ref) {
+const Formato03 = forwardRef(function F03({ equipos, user, onReadyChange }, ref) {
   const [data, setData] = useState({
     semestre: 'Ene–Jun',
     anio: String(new Date().getFullYear()),
@@ -393,6 +502,17 @@ const Formato03 = forwardRef(function F03({ equipos, user }, ref) {
     servicios: [{ equipoId: '', desc: '', tipo: 'I', mesesP: {}, mesesR: {}, mesesO: {}, obsTexto: '' }],
   })
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
+
+  useEffect(() => {
+    const ok = !!(
+      data.anio &&
+      data.fechaElab &&
+      data.jefe.trim() &&
+      data.servicios.some(sv => sv.desc.trim())
+    )
+    onReadyChange?.(ok)
+  }, [data, onReadyChange])
+
   const addSvc = () => setData(p => ({ ...p, servicios: [...p.servicios, { equipoId: '', desc: '', tipo: 'I', mesesP: {}, mesesR: {}, mesesO: {}, obsTexto: '' }] }))
   const setSvc = (i, k, v) => setData(p => { const ss = [...p.servicios]; ss[i] = { ...ss[i], [k]: v }; return { ...p, servicios: ss } })
   const delSvc = (i) => setData(p => ({ ...p, servicios: p.servicios.filter((_, j) => j !== i) }))
@@ -569,7 +689,7 @@ const Formato03 = forwardRef(function F03({ equipos, user }, ref) {
 /* ════════════════════════════════════════════════════════════════
    FORMATO 04 — Orden de Trabajo de Mantenimiento
 ════════════════════════════════════════════════════════════════ */
-const Formato04 = forwardRef(function F04({ equipos }, ref) {
+const Formato04 = forwardRef(function F04({ equipos, onReadyChange }, ref) {
   const [data, setData] = useState({
     equipoId: '',
     noControl: '',
@@ -584,6 +704,18 @@ const Formato04 = forwardRef(function F04({ equipos }, ref) {
     fechaAprobacion: today(),
   })
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
+
+  useEffect(() => {
+    onReadyChange?.(!!(
+      data.tipoServicio.trim() &&
+      data.asignadoA.trim() &&
+      data.fechaRealizacion &&
+      data.trabajoRealizado.trim() &&
+      data.verificadoPor.trim() &&
+      data.fechaVerificacion &&
+      data.aprobadoPor.trim()
+    ))
+  }, [data, onReadyChange])
 
   const handleEquipo = (id) => {
     const eq = equipos.find(e => e.id === id)
@@ -700,7 +832,7 @@ const Formato04 = forwardRef(function F04({ equipos }, ref) {
 /* ════════════════════════════════════════════════════════════════
    FORMATO 05 — Orden de Compra del Bien o Servicio
 ════════════════════════════════════════════════════════════════ */
-const Formato05 = forwardRef(function F05({ equipos }, ref) {
+const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
   const [data, setData] = useState({
     instituto: 'Ecatepec',
     proveedor: '',
@@ -712,6 +844,19 @@ const Formato05 = forwardRef(function F05({ equipos }, ref) {
     subdirector: '',
   })
   const s = (k, v) => setData(p => ({ ...p, [k]: v }))
+
+  useEffect(() => {
+    const ok = !!(
+      data.instituto.trim() &&
+      data.proveedor.trim() &&
+      data.noOrden.trim() &&
+      data.fecha &&
+      data.items.some(it => it.desc.trim()) &&
+      data.jefeAdq.trim()
+    )
+    onReadyChange?.(ok)
+  }, [data, onReadyChange])
+
   const addItem = () => setData(p => ({ ...p, items: [...p.items, { equipoId: '', cant: 1, unidad: 'Pieza', desc: '', area: '', noReq: '', precio: '' }] }))
   const setItem = (i, k, v) => setData(p => { const its=[...p.items]; its[i]={...its[i],[k]:v}; return {...p,items:its} })
   const delItem = (i) => setData(p => ({ ...p, items: p.items.filter((_,j)=>j!==i) }))
@@ -865,12 +1010,20 @@ const FORMATOS_META = [
 ════════════════════════════════════════════════════════════════ */
 function FormatoCard({ formato, equipos, user }) {
   const [open, setOpen] = useState(false)
+  const [isReady, setIsReady] = useState(false)
   const compRef = useRef(null)
   const { id, titulo, nombre, Comp } = formato
 
+  const handleToggle = () => {
+    setOpen(o => {
+      if (o) setIsReady(false)
+      return !o
+    })
+  }
+
   return (
     <div className={`card transition-all duration-200 ${open ? 'ring-2 ring-primary-300' : ''}`}>
-      <button onClick={() => setOpen(o => !o)} className="w-full flex items-center justify-between text-left">
+      <button onClick={handleToggle} className="w-full flex items-center justify-between text-left">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center flex-shrink-0">
             <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -883,9 +1036,20 @@ function FormatoCard({ formato, equipos, user }) {
             <p className="text-sm text-slate-500">{nombre}</p>
           </div>
         </div>
-        <svg className={`w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
+        <div className="flex items-center gap-3 flex-shrink-0">
+          {open && (
+            <span className={`text-xs font-medium px-2 py-0.5 rounded-full transition-all duration-300 ${
+              isReady
+                ? 'bg-green-100 text-green-700'
+                : 'bg-amber-50 text-amber-600'
+            }`}>
+              {isReady ? 'Listo para imprimir' : 'Campos pendientes'}
+            </span>
+          )}
+          <svg className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
       </button>
 
       {open && (
@@ -897,19 +1061,9 @@ function FormatoCard({ formato, equipos, user }) {
             para ver instrucciones de llenado.
           </p>
 
-          <Comp ref={compRef} equipos={equipos} user={user} />
+          <Comp ref={compRef} equipos={equipos} user={user} onReadyChange={setIsReady} />
 
-          <button
-            onClick={() => compRef.current?.print()}
-            className="btn-primary w-full py-3 justify-center"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-              <polyline points="6 9 6 2 18 2 18 9"/>
-              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
-              <rect x="6" y="14" width="12" height="8"/>
-            </svg>
-            Imprimir / Guardar PDF
-          </button>
+          <PrintButton isReady={isReady} onClick={() => compRef.current?.print()} />
         </div>
       )}
     </div>
