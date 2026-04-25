@@ -119,27 +119,23 @@ const PARTICLE_COLORS = ['#818cf8', '#6366f1', '#a5b4fc', '#c7d2fe', '#4f46e5', 
 
 function PrintButton({ isReady, onClick }) {
   const [particles, setParticles] = useState([])
-  const ivRef = useRef(null)
+  const prevReady = useRef(false)
 
   useEffect(() => {
-    if (!isReady) {
-      clearInterval(ivRef.current)
-      setParticles([])
-      return
-    }
-    ivRef.current = setInterval(() => {
-      const id = Math.random()
-      const pt = {
-        id,
-        angle: Math.random() * 360,
-        dist: 46 + Math.random() * 34,
+    // Solo disparar cuando cambia de false → true
+    if (isReady && !prevReady.current) {
+      const burst = Array.from({ length: 22 }, (_, i) => ({
+        id: i,
+        angle: (360 / 22) * i + Math.random() * 10,
+        dist: 44 + Math.random() * 36,
         color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)],
         size: 3 + Math.random() * 3.5,
-      }
-      setParticles(p => [...p.slice(-20), pt])
-      setTimeout(() => setParticles(p => p.filter(x => x.id !== id)), 1050)
-    }, 100)
-    return () => clearInterval(ivRef.current)
+      }))
+      setParticles(burst)
+      setTimeout(() => setParticles([]), 1100)
+    }
+    if (!isReady) setParticles([])
+    prevReady.current = isReady
   }, [isReady])
 
   return (
