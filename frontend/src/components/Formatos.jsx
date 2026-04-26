@@ -325,7 +325,9 @@ const Formato01 = forwardRef(function F01({ equipos, onReadyChange }, ref) {
           <input className="input" value={data.jefeDpto} onChange={e => s('jefeDpto', e.target.value)} placeholder="Recursos Materiales / Cómputo / Mantenimiento" required />
         </div>
         <div>
-          <label className="label">Fecha de verificación <Req /></label>
+          <label className="label">Fecha de verificación <Req />
+            <Tip txt="Fecha en que se realiza la visita de verificación de infraestructura y equipo." />
+          </label>
           <input type="date" className="input" value={data.fecha} onChange={e => s('fecha', e.target.value)} required />
         </div>
       </div>
@@ -457,7 +459,9 @@ const Formato02 = forwardRef(function F02({ equipos, user, onReadyChange }, ref)
         <EquipoSelect equipos={equipos} value={data.equipoId} onChange={e => handleEquipo(e.target.value)} />
       </div>
       <div className="md:col-span-2">
-        <label className="label">Departamento al que va dirigida la solicitud <Req /></label>
+        <label className="label">Departamento al que va dirigida la solicitud <Req />
+          <Tip txt="Selecciona el departamento que atenderá la solicitud según el tipo de mantenimiento requerido." />
+        </label>
         <div className="flex flex-wrap gap-5 mt-1">
           {DEPTOS_02.map(opt => (
             <label key={opt} className="flex items-center gap-2 text-sm cursor-pointer">
@@ -480,11 +484,15 @@ const Formato02 = forwardRef(function F02({ equipos, user, onReadyChange }, ref)
         <input required className="input" value={data.areasolicitante} onChange={e => s('areasolicitante', e.target.value)} />
       </div>
       <div>
-        <label className="label">Nombre y firma del solicitante <Req /></label>
+        <label className="label">Nombre y firma del solicitante <Req />
+          <Tip txt="Nombre completo y firma de quien solicita el servicio de mantenimiento correctivo." />
+        </label>
         <input required className="input" value={data.solicitante} onChange={e => s('solicitante', e.target.value)} />
       </div>
       <div>
-        <label className="label">Fecha de elaboración <Req /></label>
+        <label className="label">Fecha de elaboración <Req />
+          <Tip txt="Fecha en que se elabora y registra la solicitud de mantenimiento correctivo." />
+        </label>
         <input type="date" required className="input" value={data.fecha} onChange={e => s('fecha', e.target.value)} />
       </div>
       <div className="md:col-span-2">
@@ -603,21 +611,29 @@ const Formato03 = forwardRef(function F03({ equipos, user, onReadyChange }, ref)
     <div className="space-y-4">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div>
-          <label className="label">Semestre <Req /></label>
+          <label className="label">Semestre <Req />
+            <Tip txt="Período del año que cubre el programa: Ene–Jun (primer semestre) o Ago–Dic (segundo semestre)." />
+          </label>
           <select required className="input" value={data.semestre} onChange={e => s('semestre', e.target.value)} style={{ background: '#fff', color: '#1e293b' }}>
             <option>Ene–Jun</option><option>Ago–Dic</option>
           </select>
         </div>
         <div>
-          <label className="label">Año <Req /></label>
+          <label className="label">Año <Req />
+            <Tip txt="Año al que corresponde el programa de mantenimiento preventivo." />
+          </label>
           <input type="number" required className="input" value={data.anio} onChange={e => s('anio', e.target.value)} min="2020" max="2099" />
         </div>
         <div>
-          <label className="label">Fecha de elaboración <Req /></label>
+          <label className="label">Fecha de elaboración <Req />
+            <Tip txt="Fecha en que el Jefe del Departamento elabora el programa de mantenimiento preventivo." />
+          </label>
           <input type="date" required className="input" value={data.fechaElab} onChange={e => s('fechaElab', e.target.value)} />
         </div>
         <div>
-          <label className="label">Fecha de aprobación</label>
+          <label className="label">Fecha de aprobación
+            <Tip txt="Fecha en que el Subdirector de Servicios Administrativos aprueba el programa. Puede dejarse en blanco si aún no ha sido aprobado." />
+          </label>
           <input type="date" className="input" value={data.fechaApro} onChange={e => s('fechaApro', e.target.value)} />
         </div>
       </div>
@@ -685,11 +701,15 @@ const Formato03 = forwardRef(function F03({ equipos, user, onReadyChange }, ref)
       <button type="button" onClick={addSvc} className="btn-secondary text-xs">+ Agregar servicio</button>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-slate-100 pt-3">
         <div>
-          <label className="label">Nombre y firma — Jefe(a) del Departamento <Req /></label>
+          <label className="label">Nombre y firma — Jefe(a) del Departamento <Req />
+            <Tip txt="Nombre y firma del Jefe del Departamento de Recursos Materiales, Cómputo o Mantenimiento que elabora el programa." />
+          </label>
           <input required className="input" value={data.jefe} onChange={e => s('jefe', e.target.value)} placeholder="Recursos Materiales / Cómputo / Mantenimiento" />
         </div>
         <div>
-          <label className="label">Nombre y firma — Subdirector(a) de Servicios Administrativos</label>
+          <label className="label">Nombre y firma — Subdirector(a) de Servicios Administrativos
+            <Tip txt="Nombre y firma del Subdirector de Servicios Administrativos que aprueba el programa de mantenimiento preventivo." />
+          </label>
           <input className="input" value={data.subdirector} onChange={e => s('subdirector', e.target.value)} />
         </div>
       </div>
@@ -793,7 +813,9 @@ const Formato04 = forwardRef(function F04({ equipos, onReadyChange }, ref) {
         <input className="input" value={data.noControl} onChange={e => s('noControl', e.target.value)} placeholder="Asignado por Jefe de Depto." />
       </div>
       <div>
-        <label className="label">Tipo de mantenimiento <Req /></label>
+        <label className="label">Tipo de mantenimiento <Req />
+          <Tip txt="Interno: realizado por personal del propio instituto. Externo: realizado por empresa o técnico contratado." />
+        </label>
         <div className="flex gap-6 mt-1">
           {['Interno','Externo'].map(opt => (
             <label key={opt} className="flex items-center gap-2 text-sm cursor-pointer">
@@ -809,31 +831,45 @@ const Formato04 = forwardRef(function F04({ equipos, onReadyChange }, ref) {
         <input required className="input" value={data.tipoServicio} onChange={e => s('tipoServicio', e.target.value)} placeholder="Eléctrico, plomería, pintura…" />
       </div>
       <div>
-        <label className="label">Asignado a <Req /></label>
+        <label className="label">Asignado a <Req />
+          <Tip txt="Nombre del técnico o empresa responsable de ejecutar el trabajo de mantenimiento." />
+        </label>
         <input required className="input" value={data.asignadoA} onChange={e => s('asignadoA', e.target.value)} placeholder="Nombre del técnico responsable" />
       </div>
       <div>
-        <label className="label">Fecha de realización <Req /></label>
+        <label className="label">Fecha de realización <Req />
+          <Tip txt="Fecha en que se lleva a cabo el trabajo de mantenimiento." />
+        </label>
         <input type="date" required className="input" value={data.fechaRealizacion} onChange={e => s('fechaRealizacion', e.target.value)} />
       </div>
       <div className="md:col-span-2">
-        <label className="label">Trabajo realizado <Req /></label>
+        <label className="label">Trabajo realizado <Req />
+          <Tip txt="Descripción detallada de las actividades de mantenimiento realizadas. Se pre-rellena al seleccionar un equipo." />
+        </label>
         <textarea required className="input resize-none" rows={5} value={data.trabajoRealizado} onChange={e => s('trabajoRealizado', e.target.value)} placeholder="Selecciona un equipo arriba o describe el trabajo…" />
       </div>
       <div>
-        <label className="label">Verificado y liberado por <Req /></label>
+        <label className="label">Verificado y liberado por <Req />
+          <Tip txt="Nombre y firma de quien verifica que el trabajo fue realizado correctamente y libera el equipo." />
+        </label>
         <input required className="input" value={data.verificadoPor} onChange={e => s('verificadoPor', e.target.value)} />
       </div>
       <div>
-        <label className="label">Fecha de liberación <Req /></label>
+        <label className="label">Fecha de liberación <Req />
+          <Tip txt="Fecha en que se verifica y libera el equipo para su uso tras el mantenimiento." />
+        </label>
         <input type="date" required className="input" value={data.fechaVerificacion} onChange={e => s('fechaVerificacion', e.target.value)} />
       </div>
       <div>
-        <label className="label">Aprobado por <Req /></label>
+        <label className="label">Aprobado por <Req />
+          <Tip txt="Nombre y firma del Jefe del Departamento que aprueba la orden de trabajo de mantenimiento." />
+        </label>
         <input required className="input" value={data.aprobadoPor} onChange={e => s('aprobadoPor', e.target.value)} />
       </div>
       <div>
-        <label className="label">Fecha de aprobación <Req /></label>
+        <label className="label">Fecha de aprobación <Req />
+          <Tip txt="Fecha en que el Jefe del Departamento aprueba la orden de trabajo." />
+        </label>
         <input type="date" required className="input" value={data.fechaAprobacion} onChange={e => s('fechaAprobacion', e.target.value)} />
       </div>
     </div>
@@ -937,19 +973,27 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div>
-          <label className="label">Instituto Tecnológico de… <Req /></label>
+          <label className="label">Instituto Tecnológico de… <Req />
+            <Tip txt="Nombre del Instituto Tecnológico que emite la orden de compra (ej. Jalisco, Ecatepec, Monterrey)." />
+          </label>
           <input required className="input" value={data.instituto} onChange={e => s('instituto',e.target.value)} placeholder="Ej. Jalisco" />
         </div>
         <div className="md:col-span-2">
-          <label className="label">Proveedor <Req /></label>
+          <label className="label">Proveedor <Req />
+            <Tip txt="Nombre completo o razón social del proveedor al que se le realiza la compra del bien o servicio." />
+          </label>
           <input required className="input" value={data.proveedor} onChange={e => s('proveedor',e.target.value)} />
         </div>
         <div>
-          <label className="label">Núm. de orden <Req /></label>
+          <label className="label">Núm. de orden <Req />
+            <Tip txt="Número de folio asignado a esta orden de compra por el Departamento de Recursos Materiales." />
+          </label>
           <input required className="input" value={data.noOrden} onChange={e => s('noOrden',e.target.value)} />
         </div>
         <div>
-          <label className="label">Fecha <Req /></label>
+          <label className="label">Fecha <Req />
+            <Tip txt="Fecha en que se emite la orden de compra del bien o servicio." />
+          </label>
           <input type="date" required className="input" value={data.fecha} onChange={e => s('fecha',e.target.value)} />
         </div>
       </div>
@@ -1019,9 +1063,24 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 pt-3">
-        <div><label className="label">Jefe de Adquisiciones <Req /></label><input required className="input" value={data.jefeAdq} onChange={e=>s('jefeAdq',e.target.value)} /></div>
-        <div><label className="label">Jefe de Recursos Materiales</label><input className="input" value={data.jefeRec} onChange={e=>s('jefeRec',e.target.value)} /></div>
-        <div><label className="label">Subdirector S.A. — Vo.Bo.</label><input className="input" value={data.subdirector} onChange={e=>s('subdirector',e.target.value)} /></div>
+        <div>
+          <label className="label">Jefe de Adquisiciones <Req />
+            <Tip txt="Nombre y firma del Jefe de la Oficina de Adquisiciones." />
+          </label>
+          <input required className="input" value={data.jefeAdq} onChange={e=>s('jefeAdq',e.target.value)} />
+        </div>
+        <div>
+          <label className="label">Jefe de Recursos Materiales
+            <Tip txt="Nombre y firma del Jefe del Departamento de Recursos Materiales y Servicios." />
+          </label>
+          <input className="input" value={data.jefeRec} onChange={e=>s('jefeRec',e.target.value)} />
+        </div>
+        <div>
+          <label className="label">Subdirector S.A. — Vo.Bo.
+            <Tip txt="Nombre y firma del Subdirector de Servicios Administrativos como visto bueno de la orden de compra." />
+          </label>
+          <input className="input" value={data.subdirector} onChange={e=>s('subdirector',e.target.value)} />
+        </div>
       </div>
     </div>
   )
