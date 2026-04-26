@@ -953,69 +953,88 @@ const Formato05 = forwardRef(function F05({ equipo, user }, ref) {
         </div>
       </div>
 
-      <label className="label">Bienes o servicios</label>
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs border border-slate-200 rounded-lg overflow-hidden">
-          <thead className="bg-primary-50">
-            <tr>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-8">#</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-14">
-                Cant.
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota la cantidad de Bienes o Servicio que se solicitan." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-20">
-                Unidad
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anotar la unidad de medida del Bien o Servicio que se solicita." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase text-left">
-                Descripción
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota la descripción del Bien o Servicio que se va a adquirir." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase">
-                Área
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota el nombre del área solicitante a la que corresponde el Bien o Servicio que se va a adquirir." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-20">
-                No. Req.
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota el número de requisición. Lo anterior permite que en una sola orden de compra se surtan varias requisiciones con un solo proveedor." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-24">
-                P. Unit. $
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota el precio unitario del Bien o Servicio a adquirir, considerando el IVA." />
-              </th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-24">
-                Importe
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota el importe parcial de los Bienes o Servicios a adquirir, considerando el IVA." />
-              </th>
-              <th className="w-8"></th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100">
-            {data.items.map((it,i) => (
-              <tr key={i}>
-                <td className="px-2 py-2 text-center text-slate-400 font-mono">{i+1}</td>
-                <td className="px-2 py-2"><input type="number" min="1" className="input text-xs" value={it.cant} onChange={e=>setItem(i,'cant',e.target.value)} /></td>
-                <td className="px-2 py-2"><input className="input text-xs" value={it.unidad} onChange={e=>setItem(i,'unidad',e.target.value)} /></td>
-                <td className="px-2 py-2 min-w-[160px]"><input required className="input text-xs" value={it.desc} onChange={e=>setItem(i,'desc',e.target.value)} /></td>
-                <td className="px-2 py-2 min-w-[110px]"><input className="input text-xs" value={it.area} onChange={e=>setItem(i,'area',e.target.value)} /></td>
-                <td className="px-2 py-2"><input className="input text-xs" value={it.noReq} onChange={e=>setItem(i,'noReq',e.target.value)} /></td>
-                <td className="px-2 py-2"><input type="number" min="0" step="0.01" className="input text-xs" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" /></td>
-                <td className="px-2 py-2 text-right font-mono text-slate-700">{parcial(it)?fmt(parcial(it)):'—'}</td>
-                <td className="px-2">{data.items.length>1&&<button type="button" onClick={()=>delItem(i)} className="text-red-400 hover:text-red-600 text-xl cursor-pointer">×</button>}</td>
-              </tr>
-            ))}
-            <tr className="bg-primary-50 font-semibold">
-              <td colSpan={7} className="px-3 py-2 text-right text-xs text-slate-700 uppercase tracking-wide">
-                Importe total
-                <Tip txt="La Oficina de Adquisiciones y/o el Departamento de Recursos Materiales anota el importe total de los Bienes o Servicios a adquirir, considerando el IVA." />
-              </td>
-              <td className="px-2 py-2 text-right font-bold font-mono text-primary-700">{fmt(total)}</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="flex items-center justify-between mb-1">
+        <label className="label mb-0">Bienes o servicios</label>
+        <button type="button" onClick={addItem} className="btn-secondary text-xs">+ Agregar ítem</button>
       </div>
-      <button type="button" onClick={addItem} className="btn-secondary text-xs">+ Agregar ítem</button>
+      <div className="space-y-3">
+        {data.items.map((it,i) => (
+          <div key={i} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Ítem #{i+1}</span>
+              {data.items.length > 1 && (
+                <button type="button" onClick={() => delItem(i)} className="text-xs text-red-400 hover:text-red-600 transition-colors">Eliminar</button>
+              )}
+            </div>
+            {/* Descripción */}
+            <div>
+              <label className="label text-xs">
+                Descripción del bien o servicio <Req />
+                <Tip txt="Anotar la descripción del Bien o Servicio que se va a adquirir." />
+              </label>
+              <input required className="input text-sm" value={it.desc} onChange={e=>setItem(i,'desc',e.target.value)} placeholder="Descripción del bien o servicio a adquirir" />
+            </div>
+            {/* Cant / Unidad / Área */}
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="label text-xs">
+                  Cantidad
+                  <Tip txt="Cantidad de Bienes o Servicios que se solicitan." />
+                </label>
+                <input type="number" min="1" className="input text-sm" value={it.cant} onChange={e=>setItem(i,'cant',e.target.value)} />
+              </div>
+              <div>
+                <label className="label text-xs">
+                  Unidad
+                  <Tip txt="Unidad de medida del Bien o Servicio (pieza, litro, kg, etc.)." />
+                </label>
+                <input className="input text-sm" value={it.unidad} onChange={e=>setItem(i,'unidad',e.target.value)} />
+              </div>
+              <div>
+                <label className="label text-xs">
+                  Área solicitante
+                  <Tip txt="Nombre del área a la que corresponde el Bien o Servicio." />
+                </label>
+                <input className="input text-sm" value={it.area} onChange={e=>setItem(i,'area',e.target.value)} />
+              </div>
+            </div>
+            {/* No. Req / Precio / Importe */}
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="label text-xs">
+                  No. Requisición
+                  <Tip txt="Número de requisición. Permite surtir varias requisiciones con un solo proveedor." />
+                </label>
+                <input className="input text-sm" value={it.noReq} onChange={e=>setItem(i,'noReq',e.target.value)} placeholder="REQ-001" />
+              </div>
+              <div>
+                <label className="label text-xs">
+                  Precio unitario ($)
+                  <Tip txt="Precio unitario del Bien o Servicio considerando el IVA." />
+                </label>
+                <input type="number" min="0" step="0.01" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
+              </div>
+              <div>
+                <label className="label text-xs">
+                  Importe parcial
+                  <Tip txt="Importe parcial calculado automáticamente (cant. × precio)." />
+                </label>
+                <div className="input text-sm font-mono text-primary-700 bg-primary-50 cursor-default select-none">
+                  {parcial(it) ? fmt(parcial(it)) : '—'}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {/* Total */}
+        <div className="flex justify-end items-center gap-3 px-4 py-3 bg-primary-50 border border-primary-100 rounded-xl">
+          <span className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
+            Importe total
+            <Tip txt="Importe total de los Bienes o Servicios a adquirir, considerando el IVA." />
+          </span>
+          <span className="text-lg font-bold font-mono text-primary-700">{fmt(total)}</span>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 pt-3">
         <div>

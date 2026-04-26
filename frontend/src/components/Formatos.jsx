@@ -953,49 +953,71 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
           <input type="date" required className="input" value={data.fecha} onChange={e => s('fecha',e.target.value)} />
         </div>
       </div>
-      <label className="label">Bienes o servicios</label>
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs border border-slate-200 rounded-lg overflow-hidden">
-          <thead className="bg-primary-50">
-            <tr>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-8">#</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase">Equipo (opcional)</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-14">Cant.</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-20">Unidad</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase text-left">Descripción</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase">Área</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-20">No. Req.</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-24">P. Unit. $</th>
-              <th className="px-2 py-2 text-primary-700 font-semibold uppercase w-24">Importe</th>
-              <th className="w-8"></th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100">
-            {data.items.map((it,i) => (
-              <tr key={i}>
-                <td className="px-2 py-2 text-center text-slate-400 font-mono">{i+1}</td>
-                <td className="px-2 py-2 min-w-[160px]">
-                  <EquipoSelect equipos={equipos} value={it.equipoId} onChange={e => handleItemEquipo(i, e.target.value)} className="input text-xs" />
-                </td>
-                <td className="px-2 py-2"><input type="number" min="1" className="input text-xs" value={it.cant} onChange={e=>setItem(i,'cant',e.target.value)} /></td>
-                <td className="px-2 py-2"><input className="input text-xs" value={it.unidad} onChange={e=>setItem(i,'unidad',e.target.value)} /></td>
-                <td className="px-2 py-2 min-w-[160px]"><input required className="input text-xs" value={it.desc} onChange={e=>setItem(i,'desc',e.target.value)} placeholder="Descripción del bien o servicio" /></td>
-                <td className="px-2 py-2 min-w-[110px]"><input className="input text-xs" value={it.area} onChange={e=>setItem(i,'area',e.target.value)} /></td>
-                <td className="px-2 py-2"><input className="input text-xs" value={it.noReq} onChange={e=>setItem(i,'noReq',e.target.value)} /></td>
-                <td className="px-2 py-2"><input type="number" min="0" step="0.01" className="input text-xs" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" /></td>
-                <td className="px-2 py-2 text-right font-mono text-slate-700">{parcial(it)?fmt(parcial(it)):'—'}</td>
-                <td className="px-2">{data.items.length>1&&<button type="button" onClick={()=>delItem(i)} className="text-red-400 hover:text-red-600 text-xl cursor-pointer">×</button>}</td>
-              </tr>
-            ))}
-            <tr className="bg-primary-50 font-semibold">
-              <td colSpan={8} className="px-3 py-2 text-right text-xs text-slate-700 uppercase tracking-wide">Importe total</td>
-              <td className="px-2 py-2 text-right font-bold font-mono text-primary-700">{fmt(total)}</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="flex items-center justify-between mb-1">
+        <label className="label mb-0">Bienes o servicios</label>
+        <button type="button" onClick={addItem} className="btn-secondary text-xs">+ Agregar ítem</button>
       </div>
-      <button type="button" onClick={addItem} className="btn-secondary text-xs">+ Agregar ítem</button>
+      <div className="space-y-3">
+        {data.items.map((it,i) => (
+          <div key={i} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Ítem #{i+1}</span>
+              {data.items.length > 1 && (
+                <button type="button" onClick={() => delItem(i)} className="text-xs text-red-400 hover:text-red-600 transition-colors">Eliminar</button>
+              )}
+            </div>
+            {/* Fila 1: equipo opcional */}
+            <div>
+              <label className="label text-xs">Equipo (opcional)
+                <Tip txt="Selecciona un equipo del inventario para rellenar descripción y área automáticamente." />
+              </label>
+              <EquipoSelect equipos={equipos} value={it.equipoId} onChange={e => handleItemEquipo(i, e.target.value)} className="input text-sm" />
+            </div>
+            {/* Fila 2: descripción */}
+            <div>
+              <label className="label text-xs">Descripción del bien o servicio <Req /></label>
+              <input required className="input text-sm" value={it.desc} onChange={e=>setItem(i,'desc',e.target.value)} placeholder="Descripción del bien o servicio a adquirir" />
+            </div>
+            {/* Fila 3: cant / unidad / área */}
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="label text-xs">Cantidad</label>
+                <input type="number" min="1" className="input text-sm" value={it.cant} onChange={e=>setItem(i,'cant',e.target.value)} />
+              </div>
+              <div>
+                <label className="label text-xs">Unidad</label>
+                <input className="input text-sm" value={it.unidad} onChange={e=>setItem(i,'unidad',e.target.value)} />
+              </div>
+              <div>
+                <label className="label text-xs">Área solicitante</label>
+                <input className="input text-sm" value={it.area} onChange={e=>setItem(i,'area',e.target.value)} />
+              </div>
+            </div>
+            {/* Fila 4: no. req / precio / importe */}
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <label className="label text-xs">No. Requisición</label>
+                <input className="input text-sm" value={it.noReq} onChange={e=>setItem(i,'noReq',e.target.value)} placeholder="REQ-001" />
+              </div>
+              <div>
+                <label className="label text-xs">Precio unitario ($)</label>
+                <input type="number" min="0" step="0.01" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
+              </div>
+              <div>
+                <label className="label text-xs">Importe parcial</label>
+                <div className="input text-sm font-mono text-primary-700 bg-primary-50 cursor-default select-none">
+                  {parcial(it) ? fmt(parcial(it)) : '—'}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {/* Total */}
+        <div className="flex justify-end items-center gap-3 px-4 py-3 bg-primary-50 border border-primary-100 rounded-xl">
+          <span className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Importe total</span>
+          <span className="text-lg font-bold font-mono text-primary-700">{fmt(total)}</span>
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 pt-3">
         <div><label className="label">Jefe de Adquisiciones <Req /></label><input required className="input" value={data.jefeAdq} onChange={e=>s('jefeAdq',e.target.value)} /></div>
         <div><label className="label">Jefe de Recursos Materiales</label><input className="input" value={data.jefeRec} onChange={e=>s('jefeRec',e.target.value)} /></div>
