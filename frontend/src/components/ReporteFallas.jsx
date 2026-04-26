@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { equipos as equiposApi, tickets as ticketsApi } from '../utils/api'
 import { useAuth } from '../context/AuthContext'
 
@@ -15,6 +16,7 @@ const TIPOS_FALLA = [
 
 export default function ReporteFallas() {
   const { user } = useAuth()
+  const navigate = useNavigate()
   const [equipos, setEquipos] = useState([])
   const [form, setForm] = useState({ equipo_id: '', tipo_falla: '', descripcion: '' })
   const [busqueda, setBusqueda] = useState('')
@@ -155,9 +157,9 @@ export default function ReporteFallas() {
             className="input"
             autoComplete="off"
           />
-          {showSugerencias && sugerencias.length > 0 && (
+          {showSugerencias && (sugerencias.length > 0 || busqueda.length > 0) && (
             <div className="absolute z-30 top-full left-0 right-0 bg-slate-900/95 backdrop-blur-md border border-white/15 rounded-xl shadow-2xl mt-1 overflow-hidden">
-              {sugerencias.map(eq => (
+              {sugerencias.length > 0 ? sugerencias.map(eq => (
                 <button
                   key={eq.id}
                   type="button"
@@ -177,7 +179,19 @@ export default function ReporteFallas() {
                     'bg-red-500/20 text-red-300'
                   }`}>{eq.estado}</span>
                 </button>
-              ))}
+              )) : (
+                <p className="px-4 py-3 text-sm text-slate-400">No se encontró «{busqueda}»</p>
+              )}
+              <button
+                type="button"
+                onClick={() => navigate('/equipos')}
+                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-indigo-500/20 transition-colors text-left border-t border-white/10"
+              >
+                <div className="w-7 h-7 rounded-md bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3.5 h-3.5 text-indigo-300" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </div>
+                <p className="font-medium text-indigo-300 text-sm">Agregar nuevo equipo…</p>
+              </button>
             </div>
           )}
           {equipoSeleccionado && (
