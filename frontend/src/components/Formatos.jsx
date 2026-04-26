@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { formatos as formatosApi } from '../utils/api'
 import { useAuth } from '../context/AuthContext'
 import _logoUrl from '../assets/logo-sgm.png'
@@ -204,14 +205,28 @@ function LabSelect({ equipos, value, onChange, required, className = 'input' }) 
 
 function EquipoSelect({ equipos, value, onChange, required, className = 'input', labFiltro }) {
   const lista = labFiltro ? equipos.filter(e => e.laboratorio === labFiltro) : equipos
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    if (e.target.value === '__nuevo__') {
+      navigate('/equipos')
+      return
+    }
+    onChange(e)
+  }
+
   return (
-    <select value={value} onChange={onChange} required={required} className={className} style={{ background: '#fff', color: '#1e293b' }}>
+    <select value={value} onChange={handleChange} required={required} className={className} style={{ background: '#fff', color: '#1e293b' }}>
       <option value="">— Seleccionar equipo —</option>
       {lista.map(e => (
         <option key={e.id} value={e.id}>
           {e.nombre}{e.numero_serie ? ` · ${e.numero_serie}` : ''} — {e.laboratorio}
         </option>
       ))}
+      <option disabled style={{ color: '#94a3b8' }}>──────────────────</option>
+      <option value="__nuevo__" style={{ color: '#6366f1', fontWeight: 600 }}>
+        ＋ Agregar nuevo equipo…
+      </option>
     </select>
   )
 }
