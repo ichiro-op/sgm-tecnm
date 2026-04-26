@@ -23,6 +23,7 @@ export const tickets = {
   getAll: () => api.get('/tickets'),
   getMios: () => api.get('/tickets/mis-tickets'),
   getStats: () => api.get('/tickets/stats'),
+  getByEquipo: (equipoId) => api.get(`/tickets/equipo/${equipoId}`),
   create: (data) => api.post('/tickets', data),
   update: (id, data) => api.put(`/tickets/${id}`, data),
 }

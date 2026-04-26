@@ -31,6 +31,16 @@ router.get('/stats', requireAuth, (req, res) => {
   res.json({ total, pendientes, enProceso, resueltos, porEquipo })
 })
 
+// GET tickets activos de un equipo específico
+router.get('/equipo/:equipoId', requireAuth, (req, res) => {
+  const tickets = db.prepare(`
+    SELECT * FROM tickets
+    WHERE equipo_id = ? AND estado != 'resuelto'
+    ORDER BY fecha DESC
+  `).all(req.params.equipoId)
+  res.json(tickets)
+})
+
 // POST crear ticket
 router.post('/', requireAuth, (req, res) => {
   const { equipo_id, equipo_nombre, laboratorio, tipo_falla, descripcion } = req.body
