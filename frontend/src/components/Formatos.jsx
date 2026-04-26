@@ -845,11 +845,11 @@ const Formato04 = forwardRef(function F04({ equipos, onReadyChange }, ref) {
 ════════════════════════════════════════════════════════════════ */
 const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
   const [data, setData] = useState({
-    instituto: 'Ecatepec',
+    instituto: 'Jalisco',
     proveedor: '',
     noOrden: '',
     fecha: today(),
-    items: [{ equipoId: '', cant: 1, unidad: 'Pieza', desc: '', area: '', noReq: '', precio: '' }],
+    items: [{ equipoId: '', cant: '', unidad: '', desc: '', area: '', noReq: '', precio: '' }],
     jefeAdq: '',
     jefeRec: '',
     subdirector: '',
@@ -868,7 +868,7 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
     onReadyChange?.(ok)
   }, [data, onReadyChange])
 
-  const addItem = () => setData(p => ({ ...p, items: [...p.items, { equipoId: '', cant: 1, unidad: 'Pieza', desc: '', area: '', noReq: '', precio: '' }] }))
+  const addItem = () => setData(p => ({ ...p, items: [...p.items, { equipoId: '', cant: '', unidad: '', desc: '', area: '', noReq: '', precio: '' }] }))
   const setItem = (i, k, v) => setData(p => { const its=[...p.items]; its[i]={...its[i],[k]:v}; return {...p,items:its} })
   const delItem = (i) => setData(p => ({ ...p, items: p.items.filter((_,j)=>j!==i) }))
   const handleItemEquipo = (i, id) => {
@@ -938,7 +938,7 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div>
           <label className="label">Instituto Tecnológico de… <Req /></label>
-          <input required className="input" value={data.instituto} onChange={e => s('instituto',e.target.value)} placeholder="Ej. Ecatepec" />
+          <input required className="input" value={data.instituto} onChange={e => s('instituto',e.target.value)} placeholder="Ej. Jalisco" />
         </div>
         <div className="md:col-span-2">
           <label className="label">Proveedor <Req /></label>
