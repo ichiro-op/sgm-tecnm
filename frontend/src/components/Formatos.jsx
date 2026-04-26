@@ -1009,11 +1009,11 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
    CONFIGURACIÓN DE FORMATOS
 ════════════════════════════════════════════════════════════════ */
 const FORMATOS_META = [
-  { id: '001-01', titulo: 'TecNM-AD-PO-001-01', nombre: 'Lista de Verificación de Infraestructura y Equipo', Comp: Formato01 },
-  { id: '001-02', titulo: 'TecNM-AD-PO-001-02', nombre: 'Solicitud de Mantenimiento Correctivo',              Comp: Formato02 },
-  { id: '001-03', titulo: 'TecNM-AD-PO-001-03', nombre: 'Programa de Mantenimiento Preventivo',               Comp: Formato03 },
-  { id: '001-04', titulo: 'TecNM-AD-PO-001-04', nombre: 'Orden de Trabajo de Mantenimiento',                  Comp: Formato04 },
-  { id: '001-05', titulo: 'TecNM-AD-IT-001-05', nombre: 'Orden de Compra del Bien o Servicio',                Comp: Formato05 },
+  { id: '001-01', titulo: 'TecNM-AD-PO-001-01', nombre: 'Lista de Verificación de Infraestructura y Equipo', archivo: '/TecNM-AD-PO-001-01.docx', Comp: Formato01 },
+  { id: '001-02', titulo: 'TecNM-AD-PO-001-02', nombre: 'Solicitud de Mantenimiento Correctivo',              archivo: '/TecNM-AD-PO-001-02.docx', Comp: Formato02 },
+  { id: '001-03', titulo: 'TecNM-AD-PO-001-03', nombre: 'Programa de Mantenimiento Preventivo',               archivo: '/TecNM-AD-PO-001-03.docx', Comp: Formato03 },
+  { id: '001-04', titulo: 'TecNM-AD-PO-001-04', nombre: 'Orden de Trabajo de Mantenimiento',                  archivo: '/TecNM-AD-PO-001-04.docx', Comp: Formato04 },
+  { id: '001-05', titulo: 'TecNM-AD-IT-001-05', nombre: 'Orden de Compra del Bien o Servicio',                archivo: '/TecNM-AD-IT-001-05.docx', Comp: Formato05 },
 ]
 
 /* ════════════════════════════════════════════════════════════════
@@ -1023,7 +1023,7 @@ function FormatoCard({ formato, equipos, user }) {
   const [open, setOpen] = useState(false)
   const [isReady, setIsReady] = useState(false)
   const compRef = useRef(null)
-  const { id, titulo, nombre, Comp } = formato
+  const { id, titulo, nombre, archivo, Comp } = formato
 
   const handleToggle = () => {
     setOpen(o => {
@@ -1034,34 +1034,49 @@ function FormatoCard({ formato, equipos, user }) {
 
   return (
     <div className={`card transition-all duration-200 ${open ? 'ring-2 ring-primary-300' : ''}`}>
-      <button onClick={handleToggle} className="w-full flex items-center justify-between text-left">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-2">
+        <button onClick={handleToggle} className="flex-1 flex items-center gap-3 text-left min-w-0">
           <div className="w-9 h-9 rounded-lg bg-primary-50 border border-primary-100 flex items-center justify-center flex-shrink-0">
             <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
               <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
             </svg>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="font-semibold text-slate-800">{titulo}</p>
-            <p className="text-sm text-slate-500">{nombre}</p>
+            <p className="text-sm text-slate-500 truncate">{nombre}</p>
           </div>
-        </div>
-        <div className="flex items-center gap-3 flex-shrink-0">
+        </button>
+
+        <div className="flex items-center gap-2 flex-shrink-0">
           {open && (
             <span className={`text-xs font-medium px-2 py-0.5 rounded-full transition-all duration-300 ${
-              isReady
-                ? 'bg-green-100 text-green-700'
-                : 'bg-amber-50 text-amber-600'
+              isReady ? 'bg-green-100 text-green-700' : 'bg-amber-50 text-amber-600'
             }`}>
               {isReady ? 'Listo para imprimir' : 'Campos pendientes'}
             </span>
           )}
-          <svg className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
+          <a
+            href={archivo}
+            download
+            onClick={e => e.stopPropagation()}
+            title="Descargar formato original (.docx)"
+            className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-primary-600 bg-slate-100 hover:bg-primary-50 border border-slate-200 hover:border-primary-200 px-2.5 py-1.5 rounded-lg transition-all"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            .docx
+          </a>
+          <button onClick={handleToggle} className="p-1.5 rounded-lg hover:bg-slate-100 transition-colors">
+            <svg className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
         </div>
-      </button>
+      </div>
 
       {open && (
         <div className="mt-5 pt-5 border-t border-gray-100 space-y-5">
