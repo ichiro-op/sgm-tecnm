@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+// Siempre usar ruta relativa '/api':
+// - En dev: Vite proxy redirige /api → http://localhost:3001
+// - En prod: Vercel rewrites redirigen /api → backend de Railway
+//   Esto evita problemas de cookies cross-origin en navegadores móviles (Safari iOS).
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api',
+  baseURL: '/api',
   withCredentials: true,
 })
 

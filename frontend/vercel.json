@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/api/:path*", "destination": "https://sgm-tecnm-production-037f.up.railway.app/api/:path*" },
+    { "source": "/uploads/:path*", "destination": "https://sgm-tecnm-production-037f.up.railway.app/uploads/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
