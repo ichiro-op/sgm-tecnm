@@ -50,3 +50,4 @@ pdf_extract.txt
 backend/data/equipos.backup.json
 backend/data/historial.json
 backend/data/notificaciones.json
+backend/data/labs.json
