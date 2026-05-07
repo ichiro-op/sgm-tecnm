@@ -1,5 +1,6 @@
 import { useState, useRef, useImperativeHandle, forwardRef } from 'react'
 import { useAuth } from '../context/AuthContext'
+import { notificaciones as notiApi } from '../utils/api'
 import _logoUrl from '../assets/logo-sgm.png'
 
 /* ── Utilidades ─────────────────────────────────────────────── */
@@ -1012,7 +1013,7 @@ const Formato05 = forwardRef(function F05({ equipo, user }, ref) {
                   Precio unitario ($)
                   <Tip txt="Precio unitario del Bien o Servicio considerando el IVA." />
                 </label>
-                <input type="number" min="0" step="0.01" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
+                <input type="number" min="0" step="1" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
               </div>
               <div>
                 <label className="label text-xs">
@@ -1078,6 +1079,17 @@ export default function FormatoModal({ equipo, formatoId, onClose }) {
   const { user } = useAuth()
   const compRef = useRef(null)
   const meta = FORMATOS_META[formatoId]
+
+  const handlePrint = () => {
+    compRef.current?.print()
+    // Registrar notificación (fire-and-forget)
+    notiApi.crear({
+      equipoId:     equipo.id,
+      equipoNombre: equipo.nombre,
+      formatoId,
+      formatoNombre: meta?.nombre || formatoId,
+    }).catch(() => {})
+  }
   if (!meta) return null
   const { nombre, codigo, Comp } = meta
 
@@ -1087,7 +1099,7 @@ export default function FormatoModal({ equipo, formatoId, onClose }) {
       onClick={onClose}
     >
       <div
-        className="rounded-2xl shadow-2xl w-full max-w-4xl my-auto border border-blue-400/25 backdrop-blur-xl"
+        className="rounded-2xl shadow-2xl w-full max-w-4xl my-auto border border-blue-400/25 backdrop-blur-xl animate-modal-in"
         style={{ background: 'rgba(8, 18, 60, 0.97)' }}
         onClick={e => e.stopPropagation()}
       >
@@ -1123,7 +1135,7 @@ export default function FormatoModal({ equipo, formatoId, onClose }) {
           <p className="text-xs text-slate-400">Los campos pre-llenados pueden editarse antes de imprimir.</p>
           <div className="flex gap-3">
             <button onClick={onClose} className="btn-secondary">Cancelar</button>
-            <button onClick={() => compRef.current?.print()} className="btn-primary">
+            <button onClick={handlePrint} className="btn-primary">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <polyline points="6 9 6 2 18 2 18 9"/>
                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>

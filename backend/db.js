@@ -41,6 +41,9 @@ db.exec(`
   );
 `)
 
+// Migración: agregar columna nota_resolucion si no existe (BD ya creadas)
+try { db.exec('ALTER TABLE tickets ADD COLUMN nota_resolucion TEXT') } catch (_) {}
+
 // ── Equipos (JSON) ──────────────────────────────────────────────
 function getEquipos() {
   if (!fs.existsSync(EQUIPOS_PATH)) {

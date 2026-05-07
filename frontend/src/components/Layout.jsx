@@ -1,7 +1,25 @@
-import { Outlet, NavLink, useNavigate } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useVisual } from '../context/VisualContext'
-import { useState } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
+import { notificaciones as notiApi } from '../utils/api'
+
+/* ── Inyectar CSS de transición una sola vez ────────────────────── */
+if (typeof document !== 'undefined' && !document.getElementById('page-transition-css')) {
+  const _s = document.createElement('style')
+  _s.id = 'page-transition-css'
+  _s.textContent = `
+    @keyframes page-fade-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .page-enter {
+      animation: page-fade-in 0.25s ease-out both;
+    }
+  `
+  document.head.appendChild(_s)
+}
 
 /* ── Inline SVG icons ─────────────────────────────────────────────── */
 const Icons = {
@@ -61,6 +79,370 @@ const Icons = {
       <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
     </svg>
   ),
+  Bell: () => (
+    <svg className="w-[18px] h-[18px] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+    </svg>
+  ),
+  Check: () => (
+    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+  ),
+}
+
+const AUTO_CLOSE_MS = 8000
+
+/* ── Color accent per notification type ─────────────────────── */
+const TIPO_META = {
+  nuevo_ticket:     { border: 'border-orange-400',  dot: 'bg-orange-400',  dotDark: 'bg-orange-400'  },
+  ticket_creado:    { border: 'border-blue-400',    dot: 'bg-blue-400',    dotDark: 'bg-blue-400'    },
+  ticket_en_proceso:{ border: 'border-amber-400',   dot: 'bg-amber-400',   dotDark: 'bg-amber-400'   },
+  ticket_resuelto:  { border: 'border-emerald-400', dot: 'bg-emerald-500', dotDark: 'bg-emerald-400' },
+  solicitud_formato:{ border: 'border-violet-400',  dot: 'bg-violet-500',  dotDark: 'bg-violet-400'  },
+}
+const defaultMeta = { border: 'border-gray-300', dot: 'bg-gray-400', dotDark: 'bg-gray-500' }
+
+/* ── Shared notification item renderer ──────────────────────── */
+function NotifItem({ n, onMark, fmtFecha, isVisual }) {
+  const accent  = isVisual ? 'text-primary-300' : 'text-primary-600'
+  const success = isVisual ? 'text-emerald-400' : 'text-emerald-600'
+  const meta    = TIPO_META[n.tipo] ?? defaultMeta
+
+  const content = n.tipo === 'nuevo_ticket'
+    ? <>
+        <span className="font-semibold">{n.usuarioNombre}</span>{' '}reportó una falla:{' '}
+        <span className={accent}>{n.tipo_falla}</span>
+      </>
+    : n.tipo === 'ticket_creado'
+    ? <>
+        Tu falla en{' '}
+        <span className={accent}>{n.equipoNombre}</span>{' '}fue{' '}
+        <span className="font-semibold text-blue-400">registrada</span>
+      </>
+    : n.tipo === 'ticket_en_proceso'
+    ? <>
+        Tu ticket de{' '}
+        <span className={accent}>{n.equipoNombre}</span>{' '}está{' '}
+        <span className="font-semibold text-amber-400">en proceso</span>
+      </>
+    : n.tipo === 'ticket_resuelto'
+    ? <>
+        Tu ticket de{' '}
+        <span className={accent}>{n.equipoNombre}</span>{' '}fue{' '}
+        <span className={`font-semibold ${success}`}>resuelto</span>
+      </>
+    : /* solicitud_formato (default) */ <>
+        <span className="font-semibold">{n.usuarioNombre}</span>{' '}solicitó{' '}
+        <span className={accent}>{n.formatoNombre}</span>
+      </>
+
+  const sub = n.tipo === 'nuevo_ticket'
+    ? `${n.equipoNombre} · ${n.laboratorio}`
+    : n.equipoNombre ?? n.laboratorio ?? ''
+
+  return (
+    <div
+      className={`pl-0 pr-3 py-2 transition-colors flex items-stretch
+        ${isVisual
+          ? `border-b border-white/5 hover:bg-white/5 ${!n.visto ? 'bg-primary-900/20 cursor-pointer' : ''}`
+          : `border-b border-gray-100 hover:bg-gray-50 ${!n.visto ? 'bg-primary-50 cursor-pointer' : ''}`
+        }`}
+      onClick={() => !n.visto && onMark(n.id)}
+    >
+      {/* colored left border */}
+      <span className={`w-[3px] rounded-full flex-shrink-0 mr-2.5 self-stretch ${meta.border.replace('border-', 'bg-')}`} />
+      <div className="flex items-start gap-2 flex-1 min-w-0">
+        {!n.visto
+          ? <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1 ${isVisual ? meta.dotDark : meta.dot}`} />
+          : <span className="w-1.5 h-1.5 flex-shrink-0 mt-1" />}
+        <div className="min-w-0">
+          <p className={`text-xs leading-snug ${isVisual ? 'text-white' : 'text-gray-900'}`}>{content}</p>
+          <p className={`text-[11px] truncate ${isVisual ? 'text-slate-400' : 'text-gray-500'}`}>{sub}</p>
+          <p className={`text-[10px] ${isVisual ? 'text-slate-400' : 'text-gray-400'}`}>{fmtFecha(n.fecha)}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ── "Ver todas" modal ───────────────────────────────────────── */
+function NotifAllModal({ items, onMark, onMarcarTodas, noLeidas, fmtFecha, onClose }) {
+  const [closing, setClosing] = useState(false)
+  const { isVisual } = useVisual()
+
+  const close = () => { setClosing(true); setTimeout(onClose, 180) }
+
+  useEffect(() => {
+    const h = (e) => { if (e.key === 'Escape') close() }
+    document.addEventListener('keydown', h)
+    return () => document.removeEventListener('keydown', h)
+  }, [])
+
+  return createPortal(
+    <div
+      className={`fixed inset-0 z-[100] flex items-center justify-center p-4 ${isVisual ? 'bg-black/60 backdrop-blur-sm' : 'bg-black/40'} ${closing ? 'animate-modal-out' : 'animate-modal-in'}`}
+      onClick={e => e.target === e.currentTarget && close()}
+    >
+      <div className={`rounded-2xl shadow-2xl w-full max-w-md flex flex-col max-h-[80vh]
+        ${isVisual
+          ? 'bg-slate-900/98 backdrop-blur-xl border border-white/15'
+          : 'bg-white border border-gray-200'
+        }`}>
+        {/* Header */}
+        <div className={`flex items-center justify-between px-5 py-4 border-b ${isVisual ? 'border-white/10' : 'border-gray-100'}`}>
+          <span className={`font-bold text-sm ${isVisual ? 'text-white' : 'text-gray-900'}`}>Todas las notificaciones</span>
+          <div className="flex items-center gap-3">
+            {noLeidas > 0 && (
+              <button onClick={onMarcarTodas} className={`text-xs flex items-center gap-1 ${isVisual ? 'text-primary-400 hover:text-primary-300' : 'text-primary-600 hover:text-primary-700'}`}>
+                <Icons.Check /> Marcar todas
+              </button>
+            )}
+            <button onClick={close} className={`transition-colors text-lg leading-none ${isVisual ? 'text-slate-500 hover:text-white' : 'text-gray-400 hover:text-gray-700'}`}>✕</button>
+          </div>
+        </div>
+        {/* List */}
+        <div className="overflow-y-auto flex-1">
+          {items.length === 0
+            ? <p className={`py-12 text-center text-sm ${isVisual ? 'text-slate-500' : 'text-gray-400'}`}>Sin notificaciones</p>
+            : items.map(n => <NotifItem key={n.id} n={n} onMark={onMark} fmtFecha={fmtFecha} isVisual={isVisual} />)
+          }
+        </div>
+      </div>
+    </div>,
+    document.body
+  )
+}
+
+/* ── Notification mini panel (portal) ───────────────────────── */
+function NotifPanel({ anchorRef, onClose, onVerTodas }) {
+  const { isVisual } = useVisual()
+  const [data, setData]         = useState({ items: [], noLeidas: 0 })
+  const [loading, setLoading]   = useState(true)
+  const [pos, setPos]           = useState({ top: 0, left: 0 })
+  const [progress, setProgress] = useState(100)
+  const [closing, setClosing]   = useState(false)
+  const panelRef  = useRef()
+  const timerRef  = useRef()
+  const startRef  = useRef()
+  const pausedRef = useRef(false)
+  const progRef   = useRef(100)
+
+  // rAF position sync — follows sidebar animation frame by frame
+  useEffect(() => {
+    let rafId
+    const sync = () => {
+      if (anchorRef.current) {
+        const r = anchorRef.current.getBoundingClientRect()
+        setPos(p => {
+          const t = r.top, l = r.right + 8
+          return (p.top === t && p.left === l) ? p : { top: t, left: l }
+        })
+      }
+      rafId = requestAnimationFrame(sync)
+    }
+    rafId = requestAnimationFrame(sync)
+    return () => cancelAnimationFrame(rafId)
+  }, [anchorRef])
+
+  // Animated close helper
+  const doClose = useCallback(() => {
+    if (closing) return
+    setClosing(true)
+    setTimeout(onClose, 150)
+  }, [closing, onClose])
+
+  // Auto-close countdown via rAF
+  useEffect(() => {
+    startRef.current = Date.now()
+    const tick = () => {
+      if (!pausedRef.current) {
+        const elapsed    = Date.now() - startRef.current
+        const remaining  = Math.max(0, 100 - (elapsed / AUTO_CLOSE_MS) * 100)
+        progRef.current  = remaining
+        setProgress(remaining)
+        if (remaining <= 0) { doClose(); return }
+      }
+      timerRef.current = requestAnimationFrame(tick)
+    }
+    timerRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(timerRef.current)
+  }, [doClose])
+
+  const pauseTimer  = () => { pausedRef.current = true }
+  const resumeTimer = () => {
+    pausedRef.current  = false
+    startRef.current   = Date.now() - ((100 - progRef.current) / 100) * AUTO_CLOSE_MS
+  }
+
+  const load = useCallback(async () => {
+    try { const r = await notiApi.getAll(); setData(r.data) }
+    catch {} finally { setLoading(false) }
+  }, [])
+
+  useEffect(() => { load() }, [load])
+
+  useEffect(() => {
+    const h = (e) => {
+      if (panelRef.current?.contains(e.target)) return
+      if (anchorRef.current?.contains(e.target)) return
+      doClose()
+    }
+    document.addEventListener('mousedown', h)
+    return () => document.removeEventListener('mousedown', h)
+  }, [doClose, anchorRef])
+
+  const marcarTodas = async () => {
+    await notiApi.marcarTodas()
+    setData(p => ({ ...p, noLeidas: 0, items: p.items.map(n => ({ ...n, visto: true })) }))
+  }
+  const marcarUna = async (id) => {
+    await notiApi.marcarVista(id)
+    setData(p => ({
+      ...p,
+      noLeidas: Math.max(0, p.noLeidas - 1),
+      items: p.items.map(n => n.id === id ? { ...n, visto: true } : n),
+    }))
+  }
+  const fmtFecha = (iso) => new Date(iso).toLocaleDateString('es-MX',
+    { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })
+
+  // Prioritise unread, then newest — show max 4
+  const displayed = [...data.items]
+    .sort((a, b) => {
+      if (!a.visto && b.visto) return -1
+      if (a.visto && !b.visto) return  1
+      return new Date(b.fecha) - new Date(a.fecha)
+    })
+    .slice(0, 4)
+
+  const hasMore = data.items.length > 4
+
+  return createPortal(
+    <div
+      ref={panelRef}
+      style={{
+        position: 'fixed',
+        top: pos.top,
+        left: pos.left,
+        zIndex: 9999,
+        width: 320,
+        maxHeight: `calc(100vh - ${pos.top}px - 16px)`,
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+      className={`rounded-xl shadow-2xl overflow-hidden ${closing ? 'animate-popup-out' : 'animate-popup-in'}
+        ${isVisual
+          ? 'bg-slate-900/98 backdrop-blur-xl border border-white/15'
+          : 'bg-white border border-gray-200'
+        }`}
+      onMouseEnter={pauseTimer}
+      onMouseLeave={resumeTimer}
+    >
+      {/* Progress bar */}
+      <div className={`h-0.5 flex-shrink-0 ${isVisual ? 'bg-white/5' : 'bg-gray-100'}`}>
+        <div className="h-full bg-primary-500 transition-none" style={{ width: `${progress}%` }} />
+      </div>
+      {/* Header */}
+      <div className={`flex items-center justify-between px-3 py-2 border-b flex-shrink-0 ${isVisual ? 'border-white/10' : 'border-gray-100'}`}>
+        <span className={`text-sm font-semibold ${isVisual ? 'text-white' : 'text-gray-900'}`}>Notificaciones</span>
+        {data.noLeidas > 0 && (
+          <button onClick={marcarTodas} className={`text-xs transition-colors flex items-center gap-1 ${isVisual ? 'text-primary-400 hover:text-primary-300' : 'text-primary-600 hover:text-primary-700'}`}>
+            <Icons.Check /> Marcar todas
+          </button>
+        )}
+      </div>
+      {/* Items — scrollable si hay muchos */}
+      <div className="overflow-y-auto flex-1">
+        {loading
+          ? <p className={`py-8 text-center text-sm ${isVisual ? 'text-slate-500' : 'text-gray-400'}`}>Cargando…</p>
+          : displayed.length === 0
+            ? <p className={`py-8 text-center text-sm ${isVisual ? 'text-slate-500' : 'text-gray-400'}`}>Sin notificaciones</p>
+            : displayed.map(n => <NotifItem key={n.id} n={n} onMark={marcarUna} fmtFecha={fmtFecha} isVisual={isVisual} />)
+        }
+      </div>
+      {/* Ver todas */}
+      {!loading && (hasMore || data.items.length > 0) && (
+        <button
+          onClick={() => { pauseTimer(); onVerTodas(data, marcarUna, marcarTodas, fmtFecha) }}
+          className={`w-full py-2 text-xs transition-colors border-t font-medium flex-shrink-0
+            ${isVisual
+              ? 'text-primary-400 hover:text-primary-300 hover:bg-white/5 border-white/10'
+              : 'text-primary-600 hover:text-primary-700 hover:bg-gray-50 border-gray-100'
+            }`}
+        >
+          Ver todas ({data.items.length})
+        </button>
+      )}
+    </div>,
+    document.body
+  )
+}
+
+/* ── Bell button ─────────────────────────────────────────────── */
+function NotifBell({ expanded }) {
+  const [open, setOpen]     = useState(false)
+  const [count, setCount]   = useState(0)
+  const [allModal, setAllModal] = useState(null) // { items, noLeidas, ... }
+  const btnRef              = useRef()
+
+  useEffect(() => {
+    const load = () => notiApi.getCount().then(r => setCount(r.data.noLeidas)).catch(() => {})
+    load()
+    const id = setInterval(load, 30000)
+    return () => clearInterval(id)
+  }, [])
+
+  const handleClose = useCallback(() => {
+    setOpen(false)
+    notiApi.getCount().then(r => setCount(r.data.noLeidas)).catch(() => {})
+  }, [])
+
+  const handleVerTodas = useCallback((data, marcarUna, marcarTodas, fmtFecha) => {
+    setAllModal({ data, marcarUna, marcarTodas, fmtFecha })
+    setOpen(false)
+  }, [])
+
+  return (
+    <div className="px-2 pb-1">
+      <button
+        ref={btnRef}
+        onClick={() => setOpen(s => !s)}
+        title={!expanded ? 'Notificaciones' : undefined}
+        className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors duration-150 cursor-pointer text-slate-400 hover:text-white"
+      >
+        <div className="relative flex-shrink-0">
+          <Icons.Bell />
+          {count > 0 && (
+            <span className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 rounded-full text-white text-[9px] font-bold flex items-center justify-center leading-none">
+              {count > 9 ? '9+' : count}
+            </span>
+          )}
+        </div>
+        <span className="text-sm font-medium overflow-hidden">Notificaciones</span>
+      </button>
+      {open && (
+        <NotifPanel
+          anchorRef={btnRef}
+          onClose={handleClose}
+          onVerTodas={handleVerTodas}
+        />
+      )}
+      {allModal && (
+        <NotifAllModal
+          items={allModal.data.items}
+          noLeidas={allModal.data.noLeidas}
+          onMark={allModal.marcarUna}
+          onMarcarTodas={allModal.marcarTodas}
+          fmtFecha={allModal.fmtFecha}
+          onClose={() => {
+            setAllModal(null)
+            notiApi.getCount().then(r => setCount(r.data.noLeidas)).catch(() => {})
+          }}
+        />
+      )}
+    </div>
+  )
 }
 
 const navItems = [
@@ -76,9 +458,10 @@ const adminItems = [
 ]
 
 export default function Layout() {
-  const { user, logout }        = useAuth()
+  const { user, logout }          = useAuth()
   const { isVisual, setIsVisual } = useVisual()
-  const navigate                = useNavigate()
+  const navigate                  = useNavigate()
+  const location                  = useLocation()
 
   /* Mobile sidebar toggle */
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -86,6 +469,17 @@ export default function Layout() {
   const [expanded, setExpanded]       = useState(false)
   /* Visual mode warning modal */
   const [showWarn, setShowWarn]       = useState(false)
+  /* Scroll-to-top */
+  const mainRef                        = useRef()
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const el = mainRef.current
+    if (!el) return
+    const onScroll = () => setShowScrollTop(el.scrollTop > 200)
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => el.removeEventListener('scroll', onScroll)
+  }, [])
 
   const handleLogout = async () => { await logout(); navigate('/login') }
 
@@ -154,7 +548,7 @@ export default function Layout() {
           {user?.rol === 'admin' && (
             <>
               <div className="pt-4 pb-1 px-3 overflow-hidden whitespace-nowrap">
-                <p className="text-slate-600 text-[10px] font-bold uppercase tracking-widest">Administración</p>
+                <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Administración</p>
               </div>
               {adminItems.map(({ to, label, Icon }) => (
                 <NavLink
@@ -171,6 +565,11 @@ export default function Layout() {
             </>
           )}
         </nav>
+
+        {/* Notifications bell (all users) */}
+        <div className="border-t border-white/10 overflow-hidden whitespace-nowrap">
+          <NotifBell expanded={expanded} />
+        </div>
 
         {/* Visual mode toggle */}
         <div className="px-2 py-2 border-t border-white/10 overflow-hidden whitespace-nowrap">
@@ -251,9 +650,25 @@ export default function Layout() {
           <span className="font-bold text-white text-xs tracking-wider uppercase">MANTENIMIENTO</span>
         </header>
 
-        <main className="flex-1 overflow-y-auto p-4 md:p-6">
-          <Outlet />
+        <main ref={mainRef} className="flex-1 overflow-y-auto p-4 md:p-6">
+          <div key={location.pathname} className="page-enter">
+            <Outlet />
+          </div>
         </main>
+
+        {/* ── Botón ir arriba ───────────────────────────── */}
+        {showScrollTop && (
+          <button
+            onClick={() => mainRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+            title="Ir arriba"
+            aria-label="Ir arriba"
+            className="fixed bottom-20 right-6 z-[90] w-11 h-11 rounded-full bg-primary-600 hover:bg-primary-700 text-white shadow-lg flex items-center justify-center transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <polyline points="18 15 12 9 6 15"/>
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* ── Visual mode warning modal ─────────────────── */}

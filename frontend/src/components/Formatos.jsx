@@ -1045,7 +1045,7 @@ const Formato05 = forwardRef(function F05({ equipos, onReadyChange }, ref) {
               </div>
               <div>
                 <label className="label text-xs">Precio unitario ($)</label>
-                <input type="number" min="0" step="0.01" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
+                <input type="number" min="0" step="1" className="input text-sm" value={it.precio} onChange={e=>setItem(i,'precio',e.target.value)} placeholder="0.00" />
               </div>
               <div>
                 <label className="label text-xs">Importe parcial</label>

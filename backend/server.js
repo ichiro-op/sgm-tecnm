@@ -41,12 +41,18 @@ app.use(cors({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// ── Archivos estáticos (imágenes de equipos) ──────────────────────
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+
 // ── Rutas API ─────────────────────────────────────────────────────
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/equipos', require('./routes/equipos'))
 app.use('/api/tickets', require('./routes/tickets'))
 app.use('/api/formatos', require('./routes/formatos'))
 app.use('/api/usuarios', require('./routes/usuarios'))
+app.use('/api/labs',            require('./routes/labs'))
+app.use('/api/historial',      require('./routes/historial'))
+app.use('/api/notificaciones', require('./routes/notificaciones'))
 
 // ── Health check ──────────────────────────────────────────────────
 app.get('/api/health', (_, res) => res.json({ ok: true }))

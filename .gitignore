@@ -27,6 +27,26 @@ Thumbs.db
 # SQLite database (no subir la BD a producción)
 backend/*.db
 backend/*.sqlite
+backend/**/*.db
+backend/**/*.sqlite
+*.sqlite
+*.db
 
 # Misc
 pdf_extract.txt
+
+# Documentos de referencia (no forman parte del código de la app)
+/Diagnos de Laboratorios.docx
+/Diagnos de Laboratorios.pdf
+/documento para las fotos.docx
+/Logo formatos.png
+/logo_b64.txt
+/TecNM-AD-*.docx
+/Formatos html/
+/equipo_fotos/
+/equipo_fotos_v2/
+
+# Datos generados en runtime por el servidor
+backend/data/equipos.backup.json
+backend/data/historial.json
+backend/data/notificaciones.json

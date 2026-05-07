@@ -5,7 +5,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786203_Refrigerador_Industrial_ASBER_HRR.jpg",
+    "detalles": []
   },
   {
     "id": "2",
@@ -13,7 +14,22 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-002",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786204_Laminadora_de_Masa_MIGSA_Dq-520C.jpg",
+    "detalles": [
+      "Medidas: largo 2740 x 810 x 1050 mm. (Frente x Fondo x Alto).",
+      "Capacidad de trabajo de masa de 5 Kg.",
+      "Motor de 3/4 H.P. (550 watts) a 220V/60Hz/1Ph.",
+      "Tipo: Piso con banda.",
+      "Interruptor reversible de fácil operación, rodillos de acero inoxidable.",
+      "Apertura entre rodillos de 3.8 cms. y mínima de 0.5 cms.",
+      "Graduador de grosor de apertura ajustable de un solo paso.",
+      "Cuchillas limpiadoras, brazos abatibles, banda transportadora de PVC higiénica y lavable.",
+      "Base con ruedas giratorias.",
+      "No cuenta con clavija",
+      "Peso aproximado de 190 Kg.",
+      "Horno Turbolino alpha",
+      "Fuente de energía: Gas"
+    ]
   },
   {
     "id": "3",
@@ -21,15 +37,30 @@
     "laboratorio": "Gastronomía",
     "estado": "fuera de servicio",
     "numero_serie": "GAS-003",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786205_Horno_Turbolino_Alpha.jpg",
+    "detalles": []
   },
   {
     "id": "4",
     "nombre": "Parrilla a Gas Delta 4 Quemadores #1",
     "laboratorio": "Gastronomía",
-    "estado": "funcional",
+    "estado": "en mantenimiento",
     "numero_serie": "GAS-004",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786206_Parrilla_a_Gas_Delta_4_Quemadores__1.jpg",
+    "detalles": [
+      "Parrilla a gas 4 quemadores mixto",
+      "Fabricado el frente, costados en acero inoxidable 430 con respaldos e interiores en acero aluminizado.",
+      "Charolas para escurrimientos.",
+      "Kit de espreas para gas natural.",
+      "Patas niveladoras.",
+      "Presión de trabajo de 11” C.A. Gas L.P., 8” C.A. Gas Nat.",
+      "Potencia de 30,000 B.T.U/Hr c/u x 4 = 120,000 B.T.U/Hr.",
+      "Dimensiones:",
+      "Frente: 61 cm.",
+      "Fondo: 76 cm.",
+      "Alto: 26 cm.",
+      "Cantidad en laboratorio: 2"
+    ]
   },
   {
     "id": "5",
@@ -37,7 +68,21 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-005",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786207_Parrilla_a_Gas_Delta_4_Quemadores__2.jpg",
+    "detalles": [
+      "Parrilla a gas 4 quemadores mixto",
+      "Fabricado el frente, costados en acero inoxidable 430 con respaldos e interiores en acero aluminizado.",
+      "Charolas para escurrimientos.",
+      "Kit de espreas para gas natural.",
+      "Patas niveladoras.",
+      "Presión de trabajo de 11” C.A. Gas L.P., 8” C.A. Gas Nat.",
+      "Potencia de 30,000 B.T.U/Hr c/u x 4 = 120,000 B.T.U/Hr.",
+      "Dimensiones:",
+      "Frente: 61 cm.",
+      "Fondo: 76 cm.",
+      "Alto: 26 cm.",
+      "Cantidad en laboratorio: 2"
+    ]
   },
   {
     "id": "6",
@@ -45,7 +90,17 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "2108BA30013",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786208_Batidora_B-30BC.jpg",
+    "detalles": [
+      "Cop de tazón: 30 Lt",
+      "Cap. Harina: 6 Kg",
+      "Electricidad: 120V/60Hz",
+      "Potencia: 1.5 Kw",
+      "Velocidad: 110/200/420 r/min",
+      "Peso: 84Kg",
+      "Medida: 450X430X880mm",
+      "S/N:2108BA30013"
+    ]
   },
   {
     "id": "7",
@@ -53,7 +108,15 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-006",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786209_Horno_Microondas_Torrey_MIT-1.2T.jpeg",
+    "detalles": [
+      "Panel de control digital.",
+      "Tipo de corriente eléctrica: 110v",
+      "Exterior e interior construido en Acero Inoxidable.",
+      "Luz Interior:Incandescente.",
+      "Frente x Fondo x Alto (55.3 x 48.79 x 34.25 cm)",
+      "Peso neto 18.4 kg."
+    ]
   },
   {
     "id": "8",
@@ -61,7 +124,22 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "8102745022",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786210_Abatidor_de_Temperatura_ASBER_EBC-05.jpg",
+    "detalles": [
+      "Modelo: EBC-05",
+      "S/N: 8102745022",
+      "Electricidad: 230V/ 60Hz",
+      "Dimensiones:Frente: 790 mm Profundidad: 700 mm Altura: 850 mm",
+      "Pot. Frigorífica: 650.0 W",
+      "Lámpara: 0,0",
+      "Descarche: 0.0",
+      "Calefactor: 0",
+      "Clase Climática: 5",
+      "Temperatura: +3/-18C",
+      "Peso Neto: 80Kg",
+      "Agente expandente: CO2",
+      "Condensación: Vent."
+    ]
   },
   {
     "id": "9",
@@ -69,7 +147,16 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-007",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786211_Cafetera_Bellini_MS-100.jpg",
+    "detalles": [
+      "Especificaciones Técnicas:",
+      "Frente: 52 cm.",
+      "Fondo: 50 cm.",
+      "Alto: 52 cm.",
+      "Volts: 115/60 hz.",
+      "Potencia en Watts: 2,000.",
+      "Peso Kg: 67."
+    ]
   },
   {
     "id": "10",
@@ -77,7 +164,14 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-008",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786212_Molino_Dosificador_CASADIO.jpg",
+    "detalles": [
+      "Marca:CASADIO",
+      "Voltaje: 127V",
+      "Potencia: 360W",
+      "Produce 7 Tazas por hora",
+      "Dimensiones: 51 cm de altura x 120cm de ancho x 37cm de profundidad"
+    ]
   },
   {
     "id": "11",
@@ -85,7 +179,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-009",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786213_Fabricadora_de_Hielo_MIGSA_ZBF-60.jpg",
+    "detalles": []
   },
   {
     "id": "12",
@@ -93,7 +188,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-010",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786214_Parrilla_de_Inducci_n_MIGSA_IC-2500__1.jpg",
+    "detalles": []
   },
   {
     "id": "13",
@@ -101,7 +197,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-011",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786215_Parrilla_de_Inducci_n_MIGSA_IC-2500__2.jpg",
+    "detalles": []
   },
   {
     "id": "14",
@@ -109,7 +206,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-012",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786216_Estufa_Delta_6_Quemadores_-_Cocina_Mixta__1.png",
+    "detalles": []
   },
   {
     "id": "15",
@@ -117,7 +215,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-013",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786217_Estufa_Delta_6_Quemadores_-_Cocina_Mixta__2.png",
+    "detalles": []
   },
   {
     "id": "16",
@@ -125,7 +224,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-014",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786218_Estufa_Delta_6_Quemadores_-_Cocina_Mixta__3.png",
+    "detalles": []
   },
   {
     "id": "17",
@@ -133,7 +233,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-015",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786219_Estufa_Delta_6_Quemadores_-_Cocina_Mixta__4.png",
+    "detalles": []
   },
   {
     "id": "18",
@@ -141,7 +242,20 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-016",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786220_Licuadora_Industrial_International__1.png",
+    "detalles": [
+      "Marca:International",
+      "Voltaje: 127V 60hz",
+      "Capacidad de 17 L.",
+      "Su potencia es de 560w",
+      "Con base antideslizante.",
+      "Cuchilla resistente de acero inoxidable.",
+      "Tapa dosificadora incorporada.",
+      "Pica hielo.",
+      "Con cuchilla removible.",
+      "cantidad:2",
+      "Medidas: 35x20cm"
+    ]
   },
   {
     "id": "19",
@@ -149,7 +263,20 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-017",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786221_Licuadora_Industrial_International__2.png",
+    "detalles": [
+      "Marca:International",
+      "Voltaje: 127V 60hz",
+      "Capacidad de 17 L.",
+      "Su potencia es de 560w",
+      "Con base antideslizante.",
+      "Cuchilla resistente de acero inoxidable.",
+      "Tapa dosificadora incorporada.",
+      "Pica hielo.",
+      "Con cuchilla removible.",
+      "cantidad:2",
+      "Medidas: 35x20cm"
+    ]
   },
   {
     "id": "20",
@@ -157,7 +284,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-018",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786222_Horno_Mixto_CHEFTOP_-_Cocina_Mixta.png",
+    "detalles": []
   },
   {
     "id": "21",
@@ -165,7 +293,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-019",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786223_Estufa_Delta_6Q_-_Cocina_Int.__1.png",
+    "detalles": []
   },
   {
     "id": "22",
@@ -173,7 +302,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-020",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786224_Estufa_Delta_6Q_-_Cocina_Int.__2.png",
+    "detalles": []
   },
   {
     "id": "23",
@@ -181,7 +311,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-021",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786225_Estufa_Delta_6Q_-_Cocina_Int.__3.png",
+    "detalles": []
   },
   {
     "id": "24",
@@ -189,7 +320,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-022",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786226_Estufa_Delta_6Q_-_Cocina_Int.__4.png",
+    "detalles": []
   },
   {
     "id": "25",
@@ -197,7 +329,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-023",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786227_Estufa_Delta_6Q_-_Cocina_Int.__5.png",
+    "detalles": []
   },
   {
     "id": "26",
@@ -205,7 +338,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-024",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786228_Estufa_Delta_6Q_-_Cocina_Int.__6.png",
+    "detalles": []
   },
   {
     "id": "27",
@@ -213,7 +347,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-025",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786229_Estufa_Delta_6Q_-_Cocina_Int.__7.png",
+    "detalles": []
   },
   {
     "id": "28",
@@ -221,7 +356,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-026",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786230_Estufa_Delta_6Q_-_Cocina_Int.__8.png",
+    "detalles": []
   },
   {
     "id": "29",
@@ -229,7 +365,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-027",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786231_Estuf_n_Delta_IE-1__1.png",
+    "detalles": []
   },
   {
     "id": "30",
@@ -237,7 +374,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-028",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786232_Estuf_n_Delta_IE-1__2.png",
+    "detalles": []
   },
   {
     "id": "31",
@@ -245,7 +383,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-029",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786233_Freidora_ASBER_AEF-50-S_LPG.png",
+    "detalles": []
   },
   {
     "id": "32",
@@ -253,7 +392,14 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-030",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786234_Carro_Caliente_ASBER_EDENOX_CCB-10__1.png",
+    "detalles": [
+      "Construcción en acero inoxidable.",
+      "Cantidad: 2",
+      "Medidas: 125 x 70 x 80 cm",
+      "Calefacción mediante resistencias y aire forzado.",
+      "Termómetro exterior.    Panel de control con interruptor ON/OFF."
+    ]
   },
   {
     "id": "33",
@@ -261,7 +407,14 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-031",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786235_Carro_Caliente_ASBER_EDENOX_CCB-10__2.png",
+    "detalles": [
+      "Construcción en acero inoxidable.",
+      "Cantidad: 2",
+      "Medidas: 125 x 70 x 80 cm",
+      "Calefacción mediante resistencias y aire forzado.",
+      "Termómetro exterior.    Panel de control con interruptor ON/OFF."
+    ]
   },
   {
     "id": "34",
@@ -269,7 +422,8 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-032",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786236_Horno_Mixto_CHEFTOP_-_Cocina_Int..png",
+    "detalles": []
   },
   {
     "id": "35",
@@ -277,7 +431,14 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-033",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786237_Horno_Microondas_LG__1.png",
+    "detalles": [
+      "Voltaje: 127V",
+      "Potencia de 1.45 kW.",
+      "Con puerta espejada.",
+      "Medidas: 35x47x60",
+      "Cantidad: 2"
+    ]
   },
   {
     "id": "36",
@@ -285,7 +446,14 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-034",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786238_Horno_Microondas_LG__2.png",
+    "detalles": [
+      "Voltaje: 127V",
+      "Potencia de 1.45 kW.",
+      "Con puerta espejada.",
+      "Medidas: 35x47x60",
+      "Cantidad: 2"
+    ]
   },
   {
     "id": "37",
@@ -293,7 +461,16 @@
     "laboratorio": "Gastronomía",
     "estado": "funcional",
     "numero_serie": "GAS-035",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786239_Estufa_Wok_FR-W36.png",
+    "detalles": [
+      "Material:Gabinete fabricado de acero inoxidable",
+      "2 tipos de quemadores a seleccionad",
+      "Quemador baja presion 120,000 btu’s/hr",
+      "Quemador alta presion 200,000 btu’s/hr",
+      "Llave importada para limpieza de wok",
+      "Respaldo desmontable",
+      "Medidas:80 × 91.5 × 165 cm"
+    ]
   },
   {
     "id": "38",
@@ -301,7 +478,15 @@
     "laboratorio": "Gastronomía",
     "estado": "fuera de servicio",
     "numero_serie": "GAS-036",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786240_Horno__Inhabilitado_.png",
+    "detalles": [
+      "Panel de control digital.",
+      "Tipo de corriente eléctrica: 110v",
+      "Exterior e interior construido en Acero Inoxidable.",
+      "Luz Interior:Incandescente.",
+      "Frente x Fondo x Alto (55.3 x 48.79 x 34.25 cm)",
+      "Peso neto 18.4 kg."
+    ]
   },
   {
     "id": "39",
@@ -309,7 +494,15 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786241_Autoclave_WAC-47_WITEG.png",
+    "detalles": [
+      "Marca: witeg",
+      "Capacidad: 47 litros.",
+      "Potencia: 2kW.",
+      "Dimensiones exteriores: 680x470x880mm. (Ancho x Fondo x Alto) interiores: 300Øx670mm.",
+      "Peso: 117 Kg.",
+      "Incluye un cesto de acero inoxidable"
+    ]
   },
   {
     "id": "40",
@@ -317,7 +510,8 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-002",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786242_Horno_de_Secado_Novatech_HS60-AID.png",
+    "detalles": []
   },
   {
     "id": "41",
@@ -325,7 +519,8 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-003",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786243_Campana_de_Extracci_n_Novatech_ple-204.png",
+    "detalles": []
   },
   {
     "id": "42",
@@ -333,7 +528,13 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-004",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786244_Incubadora_SWIG_SmartLab_70_C_WITEG.png",
+    "detalles": [
+      "temporizador.",
+      "Pantalla LCD retroiluminada",
+      "Cámara de acero inoxidable resistente a la corrosión",
+      "Medidas:63x56x46cm"
+    ]
   },
   {
     "id": "43",
@@ -341,7 +542,15 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-005",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786245_Esterilizador_All_American_75x.png",
+    "detalles": [
+      "Medidas exteriores: 41.6 cm Diámetro / 35.6 cm Altura",
+      "Medidas interiores: 39 cm Diámetro / 35 cm Altura",
+      "Diámetro exterior bajo: 36.7 cm",
+      "Altura con tapa: 41.5 cm / con agarradera 48.2 cm",
+      "Altura de tapa: 9 cm / con agarradera 15 cm",
+      "Diámetro de interior bajo: 35.5 cm         Material: Aluminio Capacidad: 41 QT/39 litros Voltaje: 120 v"
+    ]
   },
   {
     "id": "44",
@@ -349,7 +558,15 @@
     "laboratorio": "Básicas",
     "estado": "funcional",
     "numero_serie": "BAS-006",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786246_Proyector_BenQ_MX501.png",
+    "detalles": [
+      "Brillo alto de 3600 lúmenes.",
+      "Contraste elevado de 20,000:1.",
+      "Múltiples entradas, incluyendo HDMI y VGA.",
+      "Tecnología DLP sin filtros que requieran limpieza.",
+      "Vida útil de la lámpara de hasta 15,000 horas.",
+      "Laboratorio de Metrología “LM”"
+    ]
   },
   {
     "id": "45",
@@ -357,7 +574,20 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786247_Centro_de_Torneado_CNC_HAAS_ST-10.png",
+    "detalles": [
+      "115000 zł",
+      "Especificaciones técnicas del torno de metal :",
+      "controlador CNC: HAAS",
+      "diámetro máximo de torneado: 356 mm",
+      "longitud máxima de torneado: 356 mm",
+      "diámetro de la barra: 44 mm",
+      "volteo sobre el contrapunto: 597 mm",
+      "volteo sobre el carro transversal: 413 mm",
+      "alimentación eléctrica: 3x 354-488 V; 50/60 Hz",
+      "dimensiones (L x An x Al): 3200 x 2108 x 1803 mm",
+      "peso de la máquina HAAS ST-10: aprox. 3600 kg"
+    ]
   },
   {
     "id": "46",
@@ -365,7 +595,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-002",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786248_Afiladora_Universal_U2.png",
+    "detalles": [
+      "Modelo: U2",
+      "Motor: 110v , 60Hz, 1/3HR, 2880RPM",
+      "Material: metal",
+      "Medidas:148x35x72cm (incluyendo la base)"
+    ]
   },
   {
     "id": "47",
@@ -373,7 +609,20 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-003",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786249_Centro_de_Mecanizado_HAAS_VF-2.png",
+    "detalles": [
+      "115000 zł",
+      "Especificaciones técnicas del torno de metal :",
+      "controlador CNC: HAAS",
+      "diámetro máximo de torneado: 356 mm",
+      "longitud máxima de torneado: 356 mm",
+      "diámetro de la barra: 44 mm",
+      "volteo sobre el contrapunto: 597 mm",
+      "volteo sobre el carro transversal: 413 mm",
+      "alimentación eléctrica: 3x 354-488 V; 50/60 Hz",
+      "dimensiones (L x An x Al): 3200 x 2108 x 1803 mm",
+      "peso de la máquina HAAS ST-10: aprox. 3600 kg"
+    ]
   },
   {
     "id": "48",
@@ -381,7 +630,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-004",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786250_Motor_Did_ctico.png",
+    "detalles": [
+      "Medidas:140x153x100cm (incluyendo la base)"
+    ]
   },
   {
     "id": "49",
@@ -389,7 +641,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-005",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786251_Transportadora.png",
+    "detalles": [
+      "Material: Metal",
+      "Medidas:304x1060x260cm"
+    ]
   },
   {
     "id": "50",
@@ -397,7 +653,36 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "360-500878",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786252_Robot_ABB_IRC5_M2004__1.jpg",
+    "detalles": [
+      "Posiciones de montaje: En el techo",
+      "Colores: Blanco",
+      "Número de ejes: 4",
+      "Repetibilidad en posición (mm): 0.1",
+      "Condición / Producción: En producción",
+      "Accesibilidad máxima (mm): 800",
+      "Áreas de aplicación : Embalaje, Manipulación",
+      "Última actualización de la página: 26/05/2021",
+      "Peso (kg): 120",
+      "Humedad máxima (%): 95",
+      "Nacionalidad : Suiza",
+      "Nivel de sonido (dB): 70",
+      "Carga útil (kg): 1",
+      "Autor de la foto : TEJIDO",
+      "Fuentes de alimentación (V/Hz): 200",
+      "Emisiones: Blindaje EMC/EMI",
+      "Software: robotstudio",
+      "Tiempo(s) de ciclo: 0.5",
+      "Accesibilidad vertical (mm): 1462",
+      "Repetibilidad angular (°): 0.4",
+      "Conexiones / Señales de herramienta (E/S): 12 polos 50 V, 250 Ma",
+      "Funciones de seguridad: paradas de emergencia y funciones de seguridad, Circuitos dobles con supervisión., Palet hombre muerto de 3 posiciones",
+      "Consumo medio de energía (W): 477",
+      "Altura (mm): 1112",
+      "Diámetro (mm): 1600",
+      "Envolvente de desarrollo (L x H x D, en mm): 1600x350x1600",
+      "CANTIDADES: 2"
+    ]
   },
   {
     "id": "51",
@@ -405,7 +690,36 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-006",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786253_Robot_ABB_IRC5_M2004__2.jpg",
+    "detalles": [
+      "Posiciones de montaje: En el techo",
+      "Colores: Blanco",
+      "Número de ejes: 4",
+      "Repetibilidad en posición (mm): 0.1",
+      "Condición / Producción: En producción",
+      "Accesibilidad máxima (mm): 800",
+      "Áreas de aplicación : Embalaje, Manipulación",
+      "Última actualización de la página: 26/05/2021",
+      "Peso (kg): 120",
+      "Humedad máxima (%): 95",
+      "Nacionalidad : Suiza",
+      "Nivel de sonido (dB): 70",
+      "Carga útil (kg): 1",
+      "Autor de la foto : TEJIDO",
+      "Fuentes de alimentación (V/Hz): 200",
+      "Emisiones: Blindaje EMC/EMI",
+      "Software: robotstudio",
+      "Tiempo(s) de ciclo: 0.5",
+      "Accesibilidad vertical (mm): 1462",
+      "Repetibilidad angular (°): 0.4",
+      "Conexiones / Señales de herramienta (E/S): 12 polos 50 V, 250 Ma",
+      "Funciones de seguridad: paradas de emergencia y funciones de seguridad, Circuitos dobles con supervisión., Palet hombre muerto de 3 posiciones",
+      "Consumo medio de energía (W): 477",
+      "Altura (mm): 1112",
+      "Diámetro (mm): 1600",
+      "Envolvente de desarrollo (L x H x D, en mm): 1600x350x1600",
+      "CANTIDADES: 2"
+    ]
   },
   {
     "id": "52",
@@ -413,7 +727,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-007",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786254_Robot_ABB_Delta_M-1_i_A_1H__1.png",
+    "detalles": [
+      "83x90x80cm"
+    ]
   },
   {
     "id": "53",
@@ -421,7 +738,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-008",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786255_Robot_ABB_Delta_M-1_i_A_1H__2.png",
+    "detalles": [
+      "83x90x80cm"
+    ]
   },
   {
     "id": "54",
@@ -429,7 +749,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-009",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786256_Horno_Industrial.jpg",
+    "detalles": [
+      "Material: metal",
+      "Medidas:170x110x92cm"
+    ]
   },
   {
     "id": "55",
@@ -437,7 +761,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "L-1",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786257_Limadora_Industrial_Baldor.jpg",
+    "detalles": [
+      "Marca:Baldor",
+      "1/3 H.p115 Volts Rpm: 34504.2 AMPS",
+      "CAT.NO.612 - SERIAL L-1MEDIDAS:120x35cm"
+    ]
   },
   {
     "id": "56",
@@ -445,7 +774,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "807",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786258_Taladro_Industrial_Z5032G.jpg",
+    "detalles": [
+      "Modelo: Z5032G",
+      "SERIAL NO.: 807",
+      "MFG DATE: 2004 7",
+      "MEDIDAS:175x70x144cm"
+    ]
   },
   {
     "id": "57",
@@ -453,7 +788,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "KM93A301",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786259_Fresadora_Chevalier_FM-3VK.jpg",
+    "detalles": [
+      "Modelo: FM-3VK",
+      "S/N: KM93A301",
+      "MEDIDAS:215x150x170cm"
+    ]
   },
   {
     "id": "58",
@@ -461,7 +801,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "LR15562",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786260_Limadora_Industrial_Dayton.jpg",
+    "detalles": [
+      "Marca:Baldor",
+      "1/3 H.p115 Volts Rpm: 34504.2 AMPS",
+      "CAT.NO.612 - SERIAL L-1MEDIDAS:120x35cm"
+    ]
   },
   {
     "id": "59",
@@ -469,7 +814,19 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-010",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786261_Torno_PINACHO_SP-200.jpg",
+    "detalles": [
+      "Este torno paralelo Pinacho usado cuenta con las siguientes características técnicas:",
+      "Distancia entre puntos: 1000 mm",
+      "Diámetro sobre bancada: 400 mm",
+      "Diámetro sobre carro longitudinal: 375 mm",
+      "Diámetro sobre carro transversal: 245 mm",
+      "Diámetro sobre escote: 560 mm",
+      "Anchura de bancada: 120 mm",
+      "Agujero del husillo: 42 mm",
+      "Cono morse del husillo: 4",
+      "Velocidades: 9 (60-2000 r.p.m)"
+    ]
   },
   {
     "id": "60",
@@ -477,7 +834,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-011",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786262_Cinta_de_Sierra_9_x16_.jpg",
+    "detalles": [
+      "9\"x16\"",
+      "Blade: 1\"x032\"x119  1/2",
+      "Medidas:130x160x55cm"
+    ]
   },
   {
     "id": "61",
@@ -485,7 +847,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-012",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786263_Sistema_Integrado_de_Manufactura.jpg",
+    "detalles": [
+      "Material:metal",
+      "Medidas:570cmx245x485cm"
+    ]
   },
   {
     "id": "62",
@@ -493,7 +859,16 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-013",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786264_PC_HP_280_G3_-_Industria_4.0.png",
+    "detalles": [
+      "Procesador I7",
+      "Octava Generación",
+      "4 De Ram",
+      "Almacenamiento: 1 Tera",
+      "Color: Negro mate",
+      "Cantidad:18",
+      "medidas:"
+    ]
   },
   {
     "id": "63",
@@ -501,7 +876,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-014",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786265_Rack_Metalico_Linkedpro_LPREP1202.5.png",
+    "detalles": [
+      "Modelo: LPREP1202.5",
+      "Marca: Linkedpro"
+    ]
   },
   {
     "id": "64",
@@ -509,7 +888,19 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-015",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786266_Robot_Educativo_Mover5.png",
+    "detalles": [
+      "Colores: Blanc",
+      "Número de ejes: 5",
+      "Condición / Producción: En producción",
+      "Nacionalidad : Alemania",
+      "Tipos de Control/HMI: Télécommande",
+      "Protocolos de comunicación: PUEDEN , USB",
+      "Motores y transmisiones: motorreductor",
+      "Software: CPRog (Windows), ROS (Linux)",
+      "Fuentes de alimentación (V/Hz): 12",
+      "Altura (mm): 206"
+    ]
   },
   {
     "id": "65",
@@ -517,7 +908,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-016",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786267_Televisor_Samsung_UHD_4K_65_.png",
+    "detalles": [
+      "Tamaño de la Pantalla 65 in65 in",
+      "Resolución 4K4K",
+      "Tecnología de la Pantalla LEDLED",
+      "Frecuencia de Actualización 60 Hz60 Hz Marca SamsungSamsung"
+    ]
   },
   {
     "id": "66",
@@ -525,7 +922,8 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "E18l10340",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786268_No-Break_ISB_Sola_Basic.png",
+    "detalles": []
   },
   {
     "id": "67",
@@ -533,7 +931,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "510628",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786269_Robot_KUKA.png",
+    "detalles": [
+      "83x90x80cm"
+    ]
   },
   {
     "id": "68",
@@ -541,7 +942,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "217B706000958",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786270_Router_Gigabit_WiFi_AC1750.png",
+    "detalles": [
+      "Energia: 12V ~ 2A",
+      "Serie: 217B706000958",
+      "medidas:"
+    ]
   },
   {
     "id": "69",
@@ -549,7 +955,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-017",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786271_DELL_OptiPlex_5050.png",
+    "detalles": [
+      "Medidas:"
+    ]
   },
   {
     "id": "70",
@@ -557,7 +966,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-018",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786272_Ball___Beam_System_GBB2004.png",
+    "detalles": [
+      "Modelo: GBB2004",
+      "Medidas:"
+    ]
   },
   {
     "id": "71",
@@ -565,7 +978,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-019",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786273_Fuente_de_Alimentaci_n_Keithley_2231A-30-3.png",
+    "detalles": [
+      "medidas:"
+    ]
   },
   {
     "id": "72",
@@ -573,7 +989,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-020",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786274_Convertidor_de_Frecuencia__1.png",
+    "detalles": [
+      "Marca: Googlo Technology",
+      "Serie: 3500039419001",
+      "Cantidad: 2",
+      "Medidas:"
+    ]
   },
   {
     "id": "73",
@@ -581,7 +1003,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-021",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786275_Convertidor_de_Frecuencia__2.png",
+    "detalles": [
+      "Marca: Googlo Technology",
+      "Serie: 3500039419001",
+      "Cantidad: 2",
+      "Medidas:"
+    ]
   },
   {
     "id": "74",
@@ -589,7 +1017,16 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-022",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786276_Impresora_3D_Colibr__PRO_V3__1.png",
+    "detalles": [
+      "Marca Colibrí 3D",
+      "Color One Color",
+      "Peso del producto 50 Gramos",
+      "Tecnología de conectividad USB",
+      "Núm. de identificación comercial global 07503025036106",
+      "Cantidad 3",
+      "Medidas:"
+    ]
   },
   {
     "id": "75",
@@ -597,7 +1034,16 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-023",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786277_Impresora_3D_Colibr__PRO_V3__2.png",
+    "detalles": [
+      "Marca Colibrí 3D",
+      "Color One Color",
+      "Peso del producto 50 Gramos",
+      "Tecnología de conectividad USB",
+      "Núm. de identificación comercial global 07503025036106",
+      "Cantidad 3",
+      "Medidas:"
+    ]
   },
   {
     "id": "76",
@@ -605,7 +1051,16 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-024",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786278_Impresora_3D_Colibr__PRO_V3__3.png",
+    "detalles": [
+      "Marca Colibrí 3D",
+      "Color One Color",
+      "Peso del producto 50 Gramos",
+      "Tecnología de conectividad USB",
+      "Núm. de identificación comercial global 07503025036106",
+      "Cantidad 3",
+      "Medidas:"
+    ]
   },
   {
     "id": "77",
@@ -613,7 +1068,14 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-025",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786279_Impresora_3D_ProJet_SD6000.png",
+    "detalles": [
+      "CONSTRUCCIÓN Y CARACTERÍSTICAS DE LA MÁQUINA",
+      "Modos de impresión: Alta definición, Ultra alta definición Resolución: (HD) 0,125 mm, capa de 0,125 mm.",
+      "(Ultra alta definición): capa de 0,125 mm, 0,10 mm.",
+      "Volumen de construcción neto: (corto) 250 mm x 250 mm x 50 mm (medio) 250 mm x 250 mm x 125 mm, (alto) 250 mm x 250 mm x 250 mm.",
+      "Precisión: 0,025 – 0,05 mm por 25,4 mm de dimensión de la pieza."
+    ]
   },
   {
     "id": "78",
@@ -621,7 +1083,11 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-026",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786280_Aparato_de_Limpieza_SCA_1200HT.png",
+    "detalles": [
+      "Disuelve el material de soporte de los modelos 3D. 11 frascos de concentrado Stratasys Waterworks sin abrir. Se trata de hidróxido de sodio que se diluirá para su uso en el SCA 1200HT y disolverá el material de soporte para impresión 3D.",
+      "medidas:"
+    ]
   },
   {
     "id": "79",
@@ -629,7 +1095,8 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-027",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786281_Trainer_Hydrostatic_Gunt_HM_115.png",
+    "detalles": []
   },
   {
     "id": "80",
@@ -637,7 +1104,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-028",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786282_Sistema_Gunt_HM_150.09.png",
+    "detalles": [
+      "MARCA: gunt",
+      "Sistema",
+      "Medidas:"
+    ]
   },
   {
     "id": "81",
@@ -645,7 +1117,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-029",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786283_Sistema_HM_150.11.png",
+    "detalles": [
+      "Medidas:"
+    ]
   },
   {
     "id": "82",
@@ -653,7 +1128,8 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-030",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786284_Bomba_Centr_fuga_Gunt_HN_150.04.png",
+    "detalles": []
   },
   {
     "id": "83",
@@ -661,7 +1137,8 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-031",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786285_Motor_de_Inducci_n_Kopack_ML.png",
+    "detalles": []
   },
   {
     "id": "84",
@@ -669,7 +1146,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-032",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786286_HP_Z220_Workstation.png",
+    "detalles": [
+      "Monitor LCD HP Compaq LA2405WG de 24\" Full HD - Negro",
+      "Teclado Y Mouse  125 Hp Usb En Español Negro Negro",
+      "Medidas:",
+      "Cantidad: 18"
+    ]
   },
   {
     "id": "85",
@@ -677,7 +1160,13 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-033",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786287_Desktop_HP_Pro_400_G9.png",
+    "detalles": [
+      "Monitor Hp Prodisplay P223, Lcd, 21.5 (x7r61aa - Excelente",
+      "Teclado y Mouse 125 Hp Usb En Español Negro Negro",
+      "Cantidad:10",
+      "Medidas:"
+    ]
   },
   {
     "id": "86",
@@ -685,7 +1174,17 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-034",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786288_Proyector_Epson_Powerlite_118.png",
+    "detalles": [
+      "Marca: Epson",
+      "Projetor epson powerlite 118 3800 lúmens",
+      "Modelo",
+      "Projetor epson powerlite 118",
+      "Modelo alfanumérico:118",
+      "Color:Blanco",
+      "Voltaje:110",
+      "medidas:"
+    ]
   },
   {
     "id": "87",
@@ -693,7 +1192,8 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-035",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786289_Smart_TV_LG_UHD_75_.png",
+    "detalles": []
   },
   {
     "id": "88",
@@ -701,7 +1201,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-036",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786290_Estaci_n_de_Trabajo_Did_ctica__1.png",
+    "detalles": [
+      "Material:Lamina de acero inoxidable",
+      "Medidas:190x193x50",
+      "Cantidad: 2"
+    ]
   },
   {
     "id": "89",
@@ -709,7 +1214,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-037",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786291_Estaci_n_de_Trabajo_Did_ctica__2.png",
+    "detalles": [
+      "Material:Lamina de acero inoxidable",
+      "Medidas:190x193x50",
+      "Cantidad: 2"
+    ]
   },
   {
     "id": "90",
@@ -717,7 +1227,12 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-038",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786292_Estaci_n_Did_ctica_con_Motor.png",
+    "detalles": [
+      "Material:Lamina de acero inoxidable",
+      "Medidas:190x193x50",
+      "Cantidad: 2"
+    ]
   },
   {
     "id": "91",
@@ -725,7 +1240,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-039",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786293_Triturador_de_Metales.png",
+    "detalles": [
+      "Medidas: 130x40x126"
+    ]
   },
   {
     "id": "92",
@@ -733,7 +1251,10 @@
     "laboratorio": "Electromecánica",
     "estado": "funcional",
     "numero_serie": "ELC-040",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786294_Regulador_VOGAR_LAN-330-440.jpg",
+    "detalles": [
+      "Medidas; 45x23x37"
+    ]
   },
   {
     "id": "93",
@@ -741,7 +1262,26 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786295_Equipo_de_C_mputo_HP_Compaq_Pro_-_LC1.jpg",
+    "detalles": [
+      "Especificaciones Monitor:",
+      "Marca: HP. Modelo LV1911",
+      "Medidas: 18.5\"",
+      "Unidades: 40",
+      "Especificaciones teclado:",
+      "Modelo: KU-1156",
+      "Marca: HP",
+      "Power Rating: 5v",
+      "Unidades: 40",
+      "Especificaciones Mouse:",
+      "Marca: HP",
+      "Unidades:40",
+      "Especificaciones CPU :",
+      "Procesador: Microsoft  Windows 7 Home Basic OA LATAM",
+      "Marca: HP",
+      "Modelo: HP Compaq Pro 6300 small form factor.",
+      "Unidades: 40"
+    ]
   },
   {
     "id": "94",
@@ -749,7 +1289,10 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-002",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786296_Smart_Board_-_LC1.png",
+    "detalles": [
+      "Medidas:125x165"
+    ]
   },
   {
     "id": "95",
@@ -757,7 +1300,8 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-003",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786297_Proyector_EPSON_Power_Lite_S39.png",
+    "detalles": []
   },
   {
     "id": "96",
@@ -765,7 +1309,10 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "193",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786298_Regulador_VOGAR_LAN_315.png",
+    "detalles": [
+      "Medidas; 45x23x37"
+    ]
   },
   {
     "id": "97",
@@ -773,7 +1320,26 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-004",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786299_Equipo_de_C_mputo_HP_ProDesk_-_LC2.jpg",
+    "detalles": [
+      "Especificaciones Monitor:",
+      "Marca: HP. Modelo LV1911",
+      "Medidas: 18.5\"",
+      "Unidades: 40",
+      "Especificaciones teclado:",
+      "Modelo: KU-1156",
+      "Marca: HP",
+      "Power Rating: 5v",
+      "Unidades: 40",
+      "Especificaciones Mouse:",
+      "Marca: HP",
+      "Unidades:40",
+      "Especificaciones CPU :",
+      "Procesador: Microsoft  Windows 7 Home Basic OA LATAM",
+      "Marca: HP",
+      "Modelo: HP Compaq Pro 6300 small form factor.",
+      "Unidades: 40"
+    ]
   },
   {
     "id": "98",
@@ -781,7 +1347,10 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-005",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786300_Smart_Board_-_LC2.jpg",
+    "detalles": [
+      "Medidas:125x165"
+    ]
   },
   {
     "id": "99",
@@ -789,7 +1358,10 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "2601",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786301_Regulador_VOGAR_LAN-324.png",
+    "detalles": [
+      "Medidas; 45x23x37"
+    ]
   },
   {
     "id": "100",
@@ -797,7 +1369,11 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-006",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786302_Cinta_Transportadora_-_LMEI.png",
+    "detalles": [
+      "Medidas: 200x94x385cm",
+      "Material: acero Inoxidable"
+    ]
   },
   {
     "id": "101",
@@ -805,7 +1381,8 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-007",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786303_Dur_metro_INNOVATEST_Cientec.png",
+    "detalles": []
   },
   {
     "id": "102",
@@ -813,7 +1390,10 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-008",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786304_M_quina_de_Medici_n__ptica_ST_Industries.png",
+    "detalles": [
+      "marca: S T Industries Inc"
+    ]
   },
   {
     "id": "103",
@@ -821,7 +1401,12 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "IND-009",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786305_Microdurometro_Cientec.png",
+    "detalles": [
+      "Marca: Cientec",
+      "Modelo:",
+      "Medidas:"
+    ]
   },
   {
     "id": "104",
@@ -829,7 +1414,8 @@
     "laboratorio": "Industrial",
     "estado": "funcional",
     "numero_serie": "14408",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786306_Dur_metro_INNOVATEST_600BDL.png",
+    "detalles": []
   },
   {
     "id": "105",
@@ -837,7 +1423,14 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "P202J08I09045",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786307_Creality_Ender-3_v2.png",
+    "detalles": [
+      "Model number: Ender-3 v2",
+      "Build size: 220*220*250mm",
+      "machine size: 475*470*620mm",
+      "Rated voltage:Ac115/230v 50/60 Hz",
+      "numero de serie: P202J08I09045"
+    ]
   },
   {
     "id": "106",
@@ -845,7 +1438,13 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "100005947333223KIJP",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786308_Creality_Ender-3_v3_SE__1.png",
+    "detalles": [
+      "Model number: Ender-3 v3 SE",
+      "machine size: 420*366*640mm",
+      "Rated voltage:100-120V 200-240V 50/60HZ",
+      "numero de serie: 100005947333223KIJP"
+    ]
   },
   {
     "id": "107",
@@ -853,7 +1452,13 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "500002297433225DC0L",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786309_Creality_Hi.png",
+    "detalles": [
+      "Model number: creality hi",
+      "machine size: 483*379*390mm",
+      "Rated voltage:100-240  50/60 hz",
+      "numero de serie: 500002297433225DC0L"
+    ]
   },
   {
     "id": "108",
@@ -861,7 +1466,13 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "100006541733124BXQY",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786310_Creality_Ender-3_v3_SE__2.png",
+    "detalles": [
+      "Model number: Ender-3 v3 SE",
+      "machine size: 420*366*640mm",
+      "Rated voltage:100-120V 200-240V 50/60HZ",
+      "numero de serie: 100005947333223KIJP"
+    ]
   },
   {
     "id": "109",
@@ -869,7 +1480,13 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "500001957033424IYIC",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786311_Creality_Ender-3_v3_SE__3.png",
+    "detalles": [
+      "Model number: Ender-3 v3 SE",
+      "machine size: 420*366*640mm",
+      "Rated voltage:100-120V 200-240V 50/60HZ",
+      "numero de serie: 100005947333223KIJP"
+    ]
   },
   {
     "id": "110",
@@ -877,7 +1494,8 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "IMP-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786312_Sistema_de_Gesti_n_de_Filamento_Creality_CFS.png",
+    "detalles": []
   },
   {
     "id": "111",
@@ -885,7 +1503,14 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "100007020122B24EKMU",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786313_Creality_Space_Pi_Filament_Dryer__1.png",
+    "detalles": [
+      "product name: creality space pi filament dryer",
+      "voltage: AC110V 50/60HZ",
+      "FILAMENT DIAMETER: 1.75/285MM",
+      "MODEL: DB-03",
+      "Numero de serie: 100007020122B24EKMU"
+    ]
   },
   {
     "id": "112",
@@ -893,7 +1518,14 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "100006846922A24DAEJ",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786314_Creality_Space_Pi_Filament_Dryer__2.png",
+    "detalles": [
+      "product name: creality space pi filament dryer",
+      "voltage: AC110V 50/60HZ",
+      "FILAMENT DIAMETER: 1.75/285MM",
+      "MODEL: DB-03",
+      "Numero de serie: 100007020122B24EKMU"
+    ]
   },
   {
     "id": "113",
@@ -901,7 +1533,14 @@
     "laboratorio": "Impresoras 3D",
     "estado": "funcional",
     "numero_serie": "100007020122B24ETJK",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786315_Creality_Space_Pi_Filament_Dryer__3.png",
+    "detalles": [
+      "product name: creality space pi filament dryer",
+      "voltage: AC110V 50/60HZ",
+      "FILAMENT DIAMETER: 1.75/285MM",
+      "MODEL: DB-03",
+      "Numero de serie: 100007020122B24EKMU"
+    ]
   },
   {
     "id": "114",
@@ -909,7 +1548,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-001",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786316_Microscopio_Biol_gico_con_C_mara__1.jpg",
+    "detalles": []
   },
   {
     "id": "115",
@@ -917,7 +1557,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-002",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786317_Microscopio_Biol_gico_con_C_mara__2.jpg",
+    "detalles": []
   },
   {
     "id": "116",
@@ -925,7 +1566,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-003",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786318_Microscopio_Biol_gico_con_C_mara__3.jpg",
+    "detalles": []
   },
   {
     "id": "117",
@@ -933,7 +1575,10 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-004",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786319_Microcam-3__1.jpg",
+    "detalles": [
+      "Cámara digital para microscopía 3 MP"
+    ]
   },
   {
     "id": "118",
@@ -941,7 +1586,10 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-005",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786320_Microcam-3__2.jpg",
+    "detalles": [
+      "Cámara digital para microscopía 3 MP"
+    ]
   },
   {
     "id": "119",
@@ -949,7 +1597,10 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-006",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786321_Microcam-3__3.jpg",
+    "detalles": [
+      "Cámara digital para microscopía 3 MP"
+    ]
   },
   {
     "id": "120",
@@ -957,7 +1608,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-007",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786322_Horno_Microondas_Industrial_Torrey.jpg",
+    "detalles": []
   },
   {
     "id": "121",
@@ -965,7 +1617,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-008",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786323_Destilador_de_Alcohol_30L.png",
+    "detalles": []
   },
   {
     "id": "122",
@@ -973,7 +1626,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-009",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786324_Refract_metro.png",
+    "detalles": []
   },
   {
     "id": "123",
@@ -981,7 +1635,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-010",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786325_Selladora_al_Vac_o.png",
+    "detalles": []
   },
   {
     "id": "124",
@@ -989,7 +1644,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-011",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786326_Sous_Vide.png",
+    "detalles": []
   },
   {
     "id": "125",
@@ -997,7 +1653,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-012",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786327_Mechero_Bunsen__1.png",
+    "detalles": []
   },
   {
     "id": "126",
@@ -1005,7 +1662,8 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-013",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786328_Mechero_Bunsen__2.png",
+    "detalles": []
   },
   {
     "id": "127",
@@ -1013,15 +1671,1123 @@
     "laboratorio": "Química Orgánica",
     "estado": "funcional",
     "numero_serie": "QOR-014",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777687786329_Mechero_Bunsen__3.png",
+    "detalles": []
   },
   {
-    "id": "1lul55t2",
-    "nombre": "holas",
-    "laboratorio": "test",
+    "id": "u3eq3org",
+    "nombre": "Silica gel con indicador",
+    "laboratorio": "Química Orgánica",
     "estado": "funcional",
-    "numero_serie": "TES-001",
+    "numero_serie": "QOR-015",
     "icono": "🔧",
-    "imagen": ""
+    "imagen": "/uploads/equipos/1777688329930_Silica_gel_con_indicador.jpg",
+    "detalles": [
+      "Perlas 3-5 mm(desecantes)",
+      "SIO²",
+      "1kg"
+    ]
+  },
+  {
+    "id": "oio0h3rx",
+    "nombre": "Hojas para Bisturí #22",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-016",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329931_Hojas_para_Bistur___22.jpg",
+    "detalles": [
+      "Cont. 100",
+      "Material:Acero al carbon"
+    ]
+  },
+  {
+    "id": "sx72a2px",
+    "nombre": "Hoja para bisturí #11",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-017",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329932_Hoja_para_bistur___11.png",
+    "detalles": [
+      "Cont.100",
+      "Material: Acero al carbon"
+    ]
+  },
+  {
+    "id": "6zjqkmcm",
+    "nombre": "Microscope slides",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-018",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329933_Microscope_slides.jpg",
+    "detalles": [
+      "Cant: 50"
+    ]
+  },
+  {
+    "id": "cnmc4ee9",
+    "nombre": "Modelo molecular Didáctico",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-019",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329934_Modelo_molecular_Did_ctico.jpg",
+    "detalles": [
+      "Para química orgánica"
+    ]
+  },
+  {
+    "id": "419zn5xz",
+    "nombre": "Frasco gotero",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-020",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329935_Frasco_gotero.jpg",
+    "detalles": [
+      "Material: vidrio"
+    ]
+  },
+  {
+    "id": "a3cyx9rb",
+    "nombre": "Mortero de porcelana",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-021",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329936_Mortero_de_porcelana.png",
+    "detalles": []
+  },
+  {
+    "id": "g8m5ht06",
+    "nombre": "Vaso de precipitado",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-022",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329937_Vaso_de_precipitado.png",
+    "detalles": []
+  },
+  {
+    "id": "l82y1kfi",
+    "nombre": "Vaso de precipitado #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-023",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329938_Vaso_de_precipitado__2.png",
+    "detalles": []
+  },
+  {
+    "id": "55pmfwa5",
+    "nombre": "Vaso de precipitado #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-024",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329939_Vaso_de_precipitado__3.png",
+    "detalles": []
+  },
+  {
+    "id": "dwqtbiv8",
+    "nombre": "Vaso de precipitado #4",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-025",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329940_Vaso_de_precipitado__4.png",
+    "detalles": []
+  },
+  {
+    "id": "3x1cik7d",
+    "nombre": "Vaso de precipitado #5",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-026",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329941_Vaso_de_precipitado__5.png",
+    "detalles": []
+  },
+  {
+    "id": "n9as7ix1",
+    "nombre": "matraz volumétrico",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-027",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329942_matraz_volum_trico.jpg",
+    "detalles": []
+  },
+  {
+    "id": "8yk4zzf2",
+    "nombre": "matraz volumétrico #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-028",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329943_matraz_volum_trico__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "ewyihv5v",
+    "nombre": "matraz Erlenmeyer",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-029",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329944_matraz_Erlenmeyer.jpg",
+    "detalles": []
+  },
+  {
+    "id": "2w331c44",
+    "nombre": "matraz Erlenmeyer #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-030",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329945_matraz_Erlenmeyer__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "xsbiwgg8",
+    "nombre": "matraz Erlenmeyer #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-031",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329946_matraz_Erlenmeyer__3.jpg",
+    "detalles": []
+  },
+  {
+    "id": "o8p17ijk",
+    "nombre": "maza para mortero",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-032",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329947_maza_para_mortero.jpg",
+    "detalles": []
+  },
+  {
+    "id": "9ubpb5ko",
+    "nombre": "pinza de tubo de ensayo",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-033",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329948_pinza_de_tubo_de_ensayo.jpg",
+    "detalles": []
+  },
+  {
+    "id": "24drgbdm",
+    "nombre": "embudo de vidrio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-034",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329949_embudo_de_vidrio.jpg",
+    "detalles": []
+  },
+  {
+    "id": "q9ypbfd7",
+    "nombre": "embudo de vidrio #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-035",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329950_embudo_de_vidrio__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "eg3mzzmw",
+    "nombre": "Matraz volumétrico #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-036",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329951_Matraz_volum_trico__3.jpg",
+    "detalles": []
+  },
+  {
+    "id": "gs3szniz",
+    "nombre": "Matraz volumétrico #4",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-037",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329952_Matraz_volum_trico__4.jpg",
+    "detalles": []
+  },
+  {
+    "id": "xz2reqcw",
+    "nombre": "Matraz volumétrico #5",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-038",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329953_Matraz_volum_trico__5.jpg",
+    "detalles": []
+  },
+  {
+    "id": "vexp1acx",
+    "nombre": "Matraz volumétrico #6",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-039",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329954_Matraz_volum_trico__6.jpg",
+    "detalles": []
+  },
+  {
+    "id": "h9c1umzg",
+    "nombre": "Termómetro digital",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-040",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329955_Term_metro_digital.jpg",
+    "detalles": []
+  },
+  {
+    "id": "k6pn6e1u",
+    "nombre": "Termómetro",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-041",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329956_Term_metro.jpg",
+    "detalles": []
+  },
+  {
+    "id": "oqcisvvq",
+    "nombre": "Pipeta",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-042",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329957_Pipeta.jpg",
+    "detalles": []
+  },
+  {
+    "id": "gisaj6a6",
+    "nombre": "Cilindro cuadrado",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-043",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329958_Cilindro_cuadrado.jpg",
+    "detalles": []
+  },
+  {
+    "id": "5ir6glbk",
+    "nombre": "Cilindro cuadrado #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-044",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329959_Cilindro_cuadrado__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "911wq6y4",
+    "nombre": "Cilindro cuadrado #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-045",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329960_Cilindro_cuadrado__3.jpg",
+    "detalles": []
+  },
+  {
+    "id": "jp6sbueo",
+    "nombre": "Cilindro cuadrado #4",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-046",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329961_Cilindro_cuadrado__4.jpg",
+    "detalles": []
+  },
+  {
+    "id": "kvsh5hki",
+    "nombre": "Frasco reactivo de vidrio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-047",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329962_Frasco_reactivo_de_vidrio.jpg",
+    "detalles": []
+  },
+  {
+    "id": "f0nb9ib9",
+    "nombre": "Frasco reactivo de vidrio #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-048",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329963_Frasco_reactivo_de_vidrio__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "jvynplyu",
+    "nombre": "Bureta 50ml",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-049",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329964_Bureta_50ml.jpg",
+    "detalles": []
+  },
+  {
+    "id": "rdcd0qn5",
+    "nombre": "Vidrio de reloj",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-050",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329965_Vidrio_de_reloj.jpg",
+    "detalles": []
+  },
+  {
+    "id": "1kf2bhkn",
+    "nombre": "Cápsula de evaporación",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-051",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329966_C_psula_de_evaporaci_n.jpg",
+    "detalles": []
+  },
+  {
+    "id": "zeezfi03",
+    "nombre": "Charola de pesaje",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-052",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329967_Charola_de_pesaje.jpg",
+    "detalles": []
+  },
+  {
+    "id": "h05i54qo",
+    "nombre": "Bandeja de pesaje de aluminio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-053",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329968_Bandeja_de_pesaje_de_aluminio.jpg",
+    "detalles": []
+  },
+  {
+    "id": "cmpbvcpr",
+    "nombre": "Bandeja riñón",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-054",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329969_Bandeja_ri__n.jpg",
+    "detalles": []
+  },
+  {
+    "id": "wei4vkzv",
+    "nombre": "Tubo de ensayo",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-055",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329970_Tubo_de_ensayo.jpg",
+    "detalles": []
+  },
+  {
+    "id": "eo8qroz8",
+    "nombre": "Tubo de ensayo #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-056",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329971_Tubo_de_ensayo__2.jpg",
+    "detalles": []
+  },
+  {
+    "id": "twohoapf",
+    "nombre": "Tubo de ensayo #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-057",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329972_Tubo_de_ensayo__3.png",
+    "detalles": []
+  },
+  {
+    "id": "lmlkvlem",
+    "nombre": "Tubo de ensayo #4",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-058",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329973_Tubo_de_ensayo__4.png",
+    "detalles": []
+  },
+  {
+    "id": "phczadrf",
+    "nombre": "Olla grande",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-059",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329974_Olla_grande.png",
+    "detalles": []
+  },
+  {
+    "id": "exzlwxl7",
+    "nombre": "Olla mediana",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-060",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329975_Olla_mediana.png",
+    "detalles": []
+  },
+  {
+    "id": "tnc402sk",
+    "nombre": "Olla chica",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-061",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329976_Olla_chica.png",
+    "detalles": []
+  },
+  {
+    "id": "yfbdqwme",
+    "nombre": "Frascos de muestra",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-062",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329977_Frascos_de_muestra.png",
+    "detalles": []
+  },
+  {
+    "id": "owhirxko",
+    "nombre": "kit de accesorios microscopio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-063",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329978_kit_de_accesorios_microscopio.png",
+    "detalles": []
+  },
+  {
+    "id": "galdnsm3",
+    "nombre": "Pinzas",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-064",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329979_Pinzas.png",
+    "detalles": []
+  },
+  {
+    "id": "o0b9be3d",
+    "nombre": "Pera de decantación",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-065",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329980_Pera_de_decantaci_n.png",
+    "detalles": []
+  },
+  {
+    "id": "7qrsefp3",
+    "nombre": "Probeta",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-066",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329981_Probeta.png",
+    "detalles": []
+  },
+  {
+    "id": "zcf5dqt7",
+    "nombre": "Probeta #2",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-067",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329982_Probeta__2.png",
+    "detalles": []
+  },
+  {
+    "id": "dfy8a6o6",
+    "nombre": "Probeta #3",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-068",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329983_Probeta__3.png",
+    "detalles": []
+  },
+  {
+    "id": "6w1zqrxg",
+    "nombre": "Caja preti",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-069",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329984_Caja_preti.png",
+    "detalles": []
+  },
+  {
+    "id": "nbyc6txw",
+    "nombre": "pinza doble para bureta",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-070",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329985_pinza_doble_para_bureta.png",
+    "detalles": []
+  },
+  {
+    "id": "771gj1xf",
+    "nombre": "Varilla para soporte universal base azul",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-071",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329986_Varilla_para_soporte_universal_base_azul.png",
+    "detalles": []
+  },
+  {
+    "id": "fulkfj1e",
+    "nombre": "Embudo de plástico mediano",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-072",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329987_Embudo_de_pl_stico_mediano.png",
+    "detalles": []
+  },
+  {
+    "id": "1zh5pjx6",
+    "nombre": "Tubo de ensayo con tapa",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-073",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329988_Tubo_de_ensayo_con_tapa.png",
+    "detalles": []
+  },
+  {
+    "id": "a3ggwoy9",
+    "nombre": "Tubo de ensayo #5",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-074",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329989_Tubo_de_ensayo__5.png",
+    "detalles": []
+  },
+  {
+    "id": "4voknvis",
+    "nombre": "Agitador",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-075",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329990_Agitador.png",
+    "detalles": []
+  },
+  {
+    "id": "q7y829h8",
+    "nombre": "Rejilla de laboratorio con centro cerámico",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-076",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329991_Rejilla_de_laboratorio_con_centro_cer_mico.png",
+    "detalles": []
+  },
+  {
+    "id": "0p6rrm8u",
+    "nombre": "Base para soporte universal",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-077",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329992_Base_para_soporte_universal.png",
+    "detalles": []
+  },
+  {
+    "id": "fnrq4co2",
+    "nombre": "varilla para soporte universal",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-078",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329993_varilla_para_soporte_universal.png",
+    "detalles": []
+  },
+  {
+    "id": "tf06wfuh",
+    "nombre": "pinza de laboratorio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-079",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329994_pinza_de_laboratorio.png",
+    "detalles": []
+  },
+  {
+    "id": "0kdqg318",
+    "nombre": "Pinza para soporte",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-080",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329995_Pinza_para_soporte.png",
+    "detalles": []
+  },
+  {
+    "id": "ox15gqqt",
+    "nombre": "kit destilación",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-081",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329996_kit_destilaci_n.png",
+    "detalles": []
+  },
+  {
+    "id": "vd3vnz1u",
+    "nombre": "Embudo plástico",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-082",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329997_Embudo_pl_stico.png",
+    "detalles": []
+  },
+  {
+    "id": "5qljh596",
+    "nombre": "Base para soporte universal color azul",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-083",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329998_Base_para_soporte_universal_color_azul.png",
+    "detalles": []
+  },
+  {
+    "id": "28ibrz0s",
+    "nombre": "Desecador de vidrio",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-084",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688329999_Desecador_de_vidrio.png",
+    "detalles": []
+  },
+  {
+    "id": "0q0o3l2n",
+    "nombre": "Mortero",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-085",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330000_Mortero.png",
+    "detalles": []
+  },
+  {
+    "id": "fn0mii62",
+    "nombre": "Limpiadores de pipetas",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-086",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330001_Limpiadores_de_pipetas.png",
+    "detalles": []
+  },
+  {
+    "id": "9fmz7y4o",
+    "nombre": "Matraz erelenmeyer 125 ml",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-087",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330002_Matraz_erelenmeyer_125_ml.png",
+    "detalles": []
+  },
+  {
+    "id": "ltsccx6e",
+    "nombre": "Mechero alcohol",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-088",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330003_Mechero_alcohol.png",
+    "detalles": []
+  },
+  {
+    "id": "u5a17msw",
+    "nombre": "Tapete silicón grande",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-089",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330004_Tapete_silic_n_grande.png",
+    "detalles": []
+  },
+  {
+    "id": "9xeejirz",
+    "nombre": "Tapete silicón chico",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-090",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330005_Tapete_silic_n_chico.png",
+    "detalles": []
+  },
+  {
+    "id": "i1buzf1l",
+    "nombre": "molinillo de café",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-091",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330006_molinillo_de_caf_.png",
+    "detalles": []
+  },
+  {
+    "id": "9s0fll00",
+    "nombre": "Tabla blanca",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-092",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330007_Tabla_blanca.png",
+    "detalles": []
+  },
+  {
+    "id": "3xfa9fgk",
+    "nombre": "Tijeras",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-093",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330008_Tijeras.png",
+    "detalles": []
+  },
+  {
+    "id": "rvzpv5dt",
+    "nombre": "Embudo cristal grande",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-094",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330009_Embudo_cristal_grande.png",
+    "detalles": []
+  },
+  {
+    "id": "q2lfp0vh",
+    "nombre": "Matraz de fondo redondo",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-095",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330010_Matraz_de_fondo_redondo.png",
+    "detalles": []
+  },
+  {
+    "id": "3sgydqpq",
+    "nombre": "Vidrio de reloj grande",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-096",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330011_Vidrio_de_reloj_grande.png",
+    "detalles": []
+  },
+  {
+    "id": "ejsxvu00",
+    "nombre": "Vaso licuadora",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-097",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330012_Vaso_licuadora.png",
+    "detalles": []
+  },
+  {
+    "id": "67gs0u21",
+    "nombre": "Tapa de licuadora",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-098",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330013_Tapa_de_licuadora.png",
+    "detalles": []
+  },
+  {
+    "id": "2i8lnaim",
+    "nombre": "motor licuadora",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-099",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330014_motor_licuadora.png",
+    "detalles": []
+  },
+  {
+    "id": "nq6g2tqp",
+    "nombre": "Sartén de 24 cm",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-100",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330015_Sart_n_de_24_cm.png",
+    "detalles": []
+  },
+  {
+    "id": "736mjpd8",
+    "nombre": "cuchara",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-101",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330016_cuchara.png",
+    "detalles": []
+  },
+  {
+    "id": "0uidp6qy",
+    "nombre": "cuchara de cocina",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-102",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330017_cuchara_de_cocina.png",
+    "detalles": []
+  },
+  {
+    "id": "w12ua5q1",
+    "nombre": "Bowl de 16 cm",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-103",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330018_Bowl_de_16_cm.png",
+    "detalles": []
+  },
+  {
+    "id": "e7re9s97",
+    "nombre": "Microondas",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-104",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330019_Microondas.png",
+    "detalles": []
+  },
+  {
+    "id": "aeqj08an",
+    "nombre": "Empacadora al Vacío",
+    "laboratorio": "Química Orgánica",
+    "estado": "funcional",
+    "numero_serie": "QOR-105",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330020_Empacadora_al_Vac_o.png",
+    "detalles": []
+  },
+  {
+    "id": "g1t22165",
+    "nombre": "silla",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-001",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330021_silla.png",
+    "detalles": []
+  },
+  {
+    "id": "w5pufxh1",
+    "nombre": "Organizador",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-002",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330022_Organizador.png",
+    "detalles": []
+  },
+  {
+    "id": "v1cr5hx0",
+    "nombre": "Archivero",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-003",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330023_Archivero.png",
+    "detalles": []
+  },
+  {
+    "id": "qpxhd8u7",
+    "nombre": "silla #2",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-004",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330024_silla__2.png",
+    "detalles": []
+  },
+  {
+    "id": "g0lr9p0d",
+    "nombre": "silla #3",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-005",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330025_silla__3.png",
+    "detalles": []
+  },
+  {
+    "id": "624f6d45",
+    "nombre": "Butaca",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-006",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330026_Butaca.png",
+    "detalles": []
+  },
+  {
+    "id": "5qh55rug",
+    "nombre": "butaca #2",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-007",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330027_butaca__2.png",
+    "detalles": []
+  },
+  {
+    "id": "854nvg0a",
+    "nombre": "butaca #3",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-008",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330028_butaca__3.png",
+    "detalles": []
+  },
+  {
+    "id": "73enixot",
+    "nombre": "butaca #4",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-009",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330029_butaca__4.png",
+    "detalles": []
+  },
+  {
+    "id": "83qc0l3e",
+    "nombre": "silla #4",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-010",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330030_silla__4.png",
+    "detalles": []
+  },
+  {
+    "id": "1hekus2i",
+    "nombre": "banco",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-011",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330031_banco.png",
+    "detalles": []
+  },
+  {
+    "id": "kgqkwrhs",
+    "nombre": "banco de laboratorio",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-012",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330032_banco_de_laboratorio.png",
+    "detalles": []
+  },
+  {
+    "id": "3wzslkag",
+    "nombre": "baúl",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-013",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330033_ba_l.png",
+    "detalles": []
+  },
+  {
+    "id": "o9elor27",
+    "nombre": "mesa",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-014",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330034_mesa.png",
+    "detalles": []
+  },
+  {
+    "id": "n71vdgta",
+    "nombre": "mesa #2",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-015",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330035_mesa__2.png",
+    "detalles": []
+  },
+  {
+    "id": "3k7npost",
+    "nombre": "silla #5",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-016",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330036_silla__5.png",
+    "detalles": []
+  },
+  {
+    "id": "i4ulisjc",
+    "nombre": "silla con ruedas",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-017",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330037_silla_con_ruedas.png",
+    "detalles": []
+  },
+  {
+    "id": "l2rxeesx",
+    "nombre": "silla con ruedas #2",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-018",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330038_silla_con_ruedas__2.png",
+    "detalles": []
+  },
+  {
+    "id": "qfu6yi7t",
+    "nombre": "silla #6",
+    "laboratorio": "Mobiliario",
+    "estado": "funcional",
+    "numero_serie": "MOB-019",
+    "icono": "🔧",
+    "imagen": "/uploads/equipos/1777688330039_silla__6.png",
+    "detalles": []
   }
 ]
